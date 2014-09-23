@@ -1,19 +1,22 @@
 package com.kent.hottnights;
 
-import android.app.FragmentTransaction;
+//import android.R;
+//import android.app.Fragment;
+//import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.kent.hottnights.leftactivities.CalendarMainFragment;
-import com.kent.hottnights.leftactivities.ClubMainFragment;
 import com.kent.hottnights.leftactivities.EventMainFragment;
 import com.kent.hottnights.leftactivities.MapMainFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubMainFragment;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 
 public class MainMenuActivity extends FragmentActivity implements
 		View.OnClickListener {
@@ -36,7 +39,7 @@ public class MainMenuActivity extends FragmentActivity implements
 		mContext = this;
 		setUpMenu();
 		Log.i("Oncreate", "is this called");
-		changeFragment(new ClubMainFragment());
+		changeFragment(new EventMainFragment());
 	}
 
 	private void setUpMenu() {
@@ -47,10 +50,10 @@ public class MainMenuActivity extends FragmentActivity implements
 		//resideMenu.setMenuListener(menuListener);
 		resideMenu.setScaleValue(0.6f);
 
-		itemEvents = new ResideMenuItem(this, R.drawable.event, "Events");
-		itemClubs = new ResideMenuItem(this, R.drawable.clubs, "Clubs");
-		itemCalendar = new ResideMenuItem(this, R.drawable.calendar, "Calendar");
-		itemMap = new ResideMenuItem(this, R.drawable.map, "Map");
+		itemEvents = new ResideMenuItem(this, R.drawable.ic_launcher, "Events");
+		itemClubs = new ResideMenuItem(this, R.drawable.icon_profile, "Clubs");
+		itemCalendar = new ResideMenuItem(this, R.drawable.calendar2, "Calendar");
+		itemMap = new ResideMenuItem(this, R.drawable.icon_home, "Map");
 
 		itemEvents.setOnClickListener(this);
 		itemClubs.setOnClickListener(this);
