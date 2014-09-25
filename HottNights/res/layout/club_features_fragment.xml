@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCAdmTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admission:" />
+
+            <TextView
+                android:id="@+id/tvCAdm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$25.00" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDateTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date:" />
+
+            <TextView
+                android:id="@+id/tvCDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01/09/1992" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCTimeTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time:" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:40am" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCPromoTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promotion:" />
+
+            <TextView
+                android:id="@+id/tvCPromo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ladies 2 4 1 before 12" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDrinksTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DRINKS LIST" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDrinks1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink1" />
+             <TextView
+                android:id="@+id/tvCDrinks2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink2" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDrinks3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink1" />
+             <TextView
+                android:id="@+id/tvCDrinks4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink2" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDrinks5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink1" />
+             <TextView
+                android:id="@+id/tvCDrinks6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink2" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDrinks7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-drink7" />
+            </TableRow>
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCDressTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dress Code" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCHatsTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hats:" />
+
+            <TextView
+                android:id="@+id/tvCHat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCHoodiesTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoodies:" />
+
+            <TextView
+                android:id="@+id/tvCHoodies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCShirtsTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shirts:" />
+
+            <TextView
+                android:id="@+id/tvShirts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T-Shirt/Button Up" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCPantsTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pants:" />
+
+            <TextView
+                android:id="@+id/tvCPants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jeans or Slacks" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvCShoesTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admission:" />
+
+            <TextView
+                android:id="@+id/tvCShoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trainers or Soft Shoes" />
+        </TableRow>
+       
+    </TableLayout>
+
+</ScrollView>

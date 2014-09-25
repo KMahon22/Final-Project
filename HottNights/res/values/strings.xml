@@ -4,7 +4,64 @@
     <string name="app_name">HottNights</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-   <string name="fbLogin"> Login With FaceBook</string>
+    <string name="fbLogin"> Login With FaceBook</string>
     <string name="twitLogin">Login With Twitter</string>
+    <string name="clubabout">blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah 
+        blah blah blah blah blah blah blah blah </string>
+
     
+    <string-array name="cimgs">
+        <item>R.drawable.icon_home</item>
+        <item>R.drawable.ic_launcher</item>
+        <item>R.drawable.icon_profile</item>
+        <item>R.drawable.icon_launcher</item>
+        <item>R.drawable.icon_home</item>
+    </string-array>
+    
+    
+    <string-array name="cnames">
+        <item>Salt</item>
+        <item>Ragga Breeze</item>
+        <item>Team Up</item>
+        <item> Club Mild</item>
+        <item>Club 180</item>
+    </string-array>
+    <string-array name="cdescr">
+        <item>1.This is one of the clubs being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>2.This is one of the clubs being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>3.This is one of the clubs being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>4.This is one of the clubs being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>5.This is one of the clubs being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+    </string-array>
+
 </resources>

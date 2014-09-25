@@ -4,19 +4,21 @@ package com.kent.hottnights;
 //import android.app.Fragment;
 //import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.kent.hottnights.leftactivities.CalendarMainFragment;
+import com.kent.hottnights.leftactivities.ClubListFragment;
 import com.kent.hottnights.leftactivities.EventMainFragment;
 import com.kent.hottnights.leftactivities.MapMainFragment;
-import com.kent.hottnights.leftactivities.clubs.ClubMainFragment;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 
 public class MainMenuActivity extends FragmentActivity implements
 		View.OnClickListener {
@@ -27,19 +29,26 @@ public class MainMenuActivity extends FragmentActivity implements
 	private ResideMenuItem itemClubs;
 	private ResideMenuItem itemCalendar;
 	private ResideMenuItem itemMap;
-
+	public static FragmentManager fragmentManager;
 	//@InjectView(R.id.title_bar_left_menu)
 	//Button leftMenu;
+	
+	
+	private TextView header;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 		setContentView(R.layout.main_activity);
+		header= (TextView) findViewById(R.id.tvHeader);
 		mContext = this;
 		setUpMenu();
 		Log.i("Oncreate", "is this called");
 		changeFragment(new EventMainFragment());
+		
+		fragmentManager = getSupportFragmentManager();
+		
 	}
 
 	private void setUpMenu() {
@@ -87,27 +96,37 @@ public class MainMenuActivity extends FragmentActivity implements
 		if (view == itemEvents)
 		{
 			changeFragment(new EventMainFragment());
+			header.setText("Events");
+			
 		} else if (view == itemClubs)
 		{
-			changeFragment(new ClubMainFragment());
+			changeFragment(new ClubListFragment());
+			header.setText("Clubs");
 		} else if ( view == itemCalendar)
 		{
 			changeFragment(new CalendarMainFragment());
+			header.setText("Calendar");
 		} else if (view == itemMap)
 		{
 			changeFragment(new MapMainFragment());
+			header.setText("Map");
 		}
 		
 		resideMenu.closeMenu();
 	}
 
-	private void changeFragment (Fragment targetFragment) {
+	public void changeHead(String head)
+	{
+		header.setText(head);
+	}
+	public void changeFragment (Fragment targetFragment) {
 		// TODO Auto-generated method stub
 		resideMenu.clearIgnoredViewList();
 		getSupportFragmentManager()
 		.beginTransaction()
 		.replace(R.id.main_fragment, targetFragment, "fragment")
 		.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+		.addToBackStack(null)
 		.commit();
 		
 	}

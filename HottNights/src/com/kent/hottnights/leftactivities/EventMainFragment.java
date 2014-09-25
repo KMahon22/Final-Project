@@ -45,5 +45,14 @@ public class EventMainFragment  extends Fragment{
 	FrameLayout ignored_view = (FrameLayout) parentView.findViewById(R.id.ignored_view);
 	resideMenu.addIgnoredView(ignored_view);
 	}
+	
+	/*@Override
+	public void onDestroy() {
+	Fragment fragment = getFragmentManager().findFragmentById(R.id.main_fragment);
+	if (fragment.isResumed()) {
+	    getFragmentManager().beginTransaction().remove(fragment).commit();
+	}
+	super.onDestroy();
+	}*/
 
 }

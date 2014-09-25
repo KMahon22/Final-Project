@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,12 @@ public class ClubMainFragment extends Fragment {
 	
 	private Drawable oldBackground = null;
 	private int currentColor = 0xFF666666;
+	
+	private String name = "Salt";
+	
+	
+	
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,6 +87,10 @@ public class ClubMainFragment extends Fragment {
 	
 	}
 
+	public String getName()
+	{
+		return name;
+	}
 
 	public class MyPagerAdapter extends FragmentPagerAdapter 
 	{
@@ -95,7 +106,19 @@ public class ClubMainFragment extends Fragment {
 		@Override
 		public Fragment getItem(int position) {
 			// TODO Auto-generated method stub
-			return CardsFragment.newInstance(position);
+			Log.i("GI", "get item for fragments is called");
+			if (position == 0)
+			{
+				return ClubAboutFragment.aboutFrag();
+			}
+			else if (position == 2)
+			{
+				return ClubFeaturesFragment.featuresFrag();
+			}
+			else
+			{
+			return ClubCardsFragment.newInstance(position);
+			}
 		}
 
 		@Override
