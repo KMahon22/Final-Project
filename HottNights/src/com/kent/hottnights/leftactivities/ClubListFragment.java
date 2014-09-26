@@ -59,6 +59,7 @@ public class ClubListFragment extends ListFragment {
 			cList.add(hm);
 		}
 		
+		
 		String[] from = {"name","descr","imgs"};
 		
 		int[] to = {R.id.tvClubListName, R.id.tvClubListDescr, R.id.ivClubListImg};

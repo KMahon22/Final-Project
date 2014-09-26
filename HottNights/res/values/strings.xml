@@ -63,5 +63,14 @@
             im not sure if i have a limit but i need just enough to be scrollable
            . lets see how this goes</item>
     </string-array>
+    
+    <array name="crate">
+        <item>3</item>
+        <item>4</item>
+        <item>2</item>
+        <item>5</item>
+        <item>1</item>
+        
+    </array>
 
 </resources>

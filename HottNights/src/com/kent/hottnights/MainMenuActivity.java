@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
 import com.kent.hottnights.leftactivities.CalendarMainFragment;
 import com.kent.hottnights.leftactivities.ClubListFragment;
 import com.kent.hottnights.leftactivities.EventMainFragment;
@@ -30,6 +31,7 @@ public class MainMenuActivity extends FragmentActivity implements
 	private ResideMenuItem itemCalendar;
 	private ResideMenuItem itemMap;
 	public static FragmentManager fragmentManager;
+	public static GoogleMap googleMap;
 	//@InjectView(R.id.title_bar_left_menu)
 	//Button leftMenu;
 	
@@ -48,6 +50,7 @@ public class MainMenuActivity extends FragmentActivity implements
 		changeFragment(new EventMainFragment());
 		
 		fragmentManager = getSupportFragmentManager();
+		
 		
 	}
 

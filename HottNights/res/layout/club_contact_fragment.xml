@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+        
+        <TableRow 
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCAddressTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADDRESS" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="425,The Avenue, Jez Pew" />
+            
+        </TableRow>
+       
+            <TableRow 
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCNumTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFFICE NUMBERS" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCNum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1-246-397-1969" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCNum2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1-246-397-2265" />
+            
+        </TableRow>
+         <TableRow 
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCWSTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEBSITE" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCWS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="https://www.saltedarticulate.com" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCEmailTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EMAIL" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="saltedmilk@articulate.com" />
+            
+        </TableRow>
+         <TableRow 
+            android:id="@+id/tableRow12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCFbkTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FACEBOOK" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCFbk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="https//facebook.com/Salted" />
+            
+        </TableRow>
+             <TableRow 
+            android:id="@+id/tableRow14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCTwitTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TWITTER" />
+            
+        </TableRow>
+        <TableRow 
+            android:id="@+id/tableRow15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCCTwit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#Salted_Milk" />
+            
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>
