@@ -104,6 +104,8 @@ public class ClubMainFragment extends Fragment {
 			Log.i("GI", "get item for fragments is called");
 			if (position == 0) {
 				return ClubAboutFragment.aboutFrag();
+			} else if (position == 1) {
+				return ClubPhotoFragment.photoFrag();
 			} else if (position == 2) {
 				return ClubFeaturesFragment.featuresFrag();
 			} else if (position == 3) {
@@ -130,4 +132,6 @@ public class ClubMainFragment extends Fragment {
 			return TITLES[position];
 		}
 	}
+	
+	
 }

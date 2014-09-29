@@ -108,7 +108,7 @@ public class ClubListFragment extends ListFragment {
         fragmentTransaction.commit(); */
 	}
 	
-	@Override
+	/*@Override
 	public void onDestroy() {
 	Fragment fragment = getChildFragmentManager().findFragmentById(R.id.clublistcontainer);
 	if (fragment.isResumed()) {
@@ -116,7 +116,7 @@ public class ClubListFragment extends ListFragment {
 	}
 	super.onDestroy();
 	} 
-	
+	 */
 	
  
 

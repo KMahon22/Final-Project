@@ -14,13 +14,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCAdmTag"
+                android:id="@+id/tvClAdmTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Admission:" />
 
             <TextView
-                android:id="@+id/tvCAdm"
+                android:id="@+id/tvClAdm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$25.00" />
@@ -31,13 +31,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDateTag"
+                android:id="@+id/tvClDateTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date:" />
 
             <TextView
-                android:id="@+id/tvCDate"
+                android:id="@+id/tvClDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/09/1992" />
@@ -48,13 +48,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCTimeTag"
+                android:id="@+id/tvClTimeTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Time:" />
 
             <TextView
-                android:id="@+id/tvTime"
+                android:id="@+id/tvClTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12:40am" />
@@ -66,13 +66,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCPromoTag"
+                android:id="@+id/tvClPromoTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Promotion:" />
 
             <TextView
-                android:id="@+id/tvCPromo"
+                android:id="@+id/tvClPromo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ladies 2 4 1 before 12" />
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDrinksTag"
+                android:id="@+id/tvClDrinksTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DRINKS LIST" />
@@ -96,12 +96,12 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDrinks1"
+                android:id="@+id/tvClDrinks1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink1" />
              <TextView
-                android:id="@+id/tvCDrinks2"
+                android:id="@+id/tvClDrinks2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink2" />
@@ -112,12 +112,12 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDrinks3"
+                android:id="@+id/tvClDrinks3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink1" />
              <TextView
-                android:id="@+id/tvCDrinks4"
+                android:id="@+id/tvClDrinks4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink2" />
@@ -128,12 +128,12 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDrinks5"
+                android:id="@+id/tvClDrinks5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink1" />
              <TextView
-                android:id="@+id/tvCDrinks6"
+                android:id="@+id/tvClDrinks6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink2" />
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDrinks7"
+                android:id="@+id/tvClDrinks7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink7" />
@@ -155,7 +155,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCDressTag"
+                android:id="@+id/tvClDressTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dress Code" />
@@ -166,13 +166,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCHatsTag"
+                android:id="@+id/tvClHatsTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hats:" />
 
             <TextView
-                android:id="@+id/tvCHat"
+                android:id="@+id/tvClHat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No" />
@@ -183,13 +183,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCHoodiesTag"
+                android:id="@+id/tvClHoodiesTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hoodies:" />
 
             <TextView
-                android:id="@+id/tvCHoodies"
+                android:id="@+id/tvClHoodies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No" />
@@ -200,13 +200,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCShirtsTag"
+                android:id="@+id/tvClShirtsTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Shirts:" />
 
             <TextView
-                android:id="@+id/tvShirts"
+                android:id="@+id/tvClShirts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="T-Shirt/Button Up" />
@@ -217,13 +217,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCPantsTag"
+                android:id="@+id/tvClPantsTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pants:" />
 
             <TextView
-                android:id="@+id/tvCPants"
+                android:id="@+id/tvClPants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jeans or Slacks" />
@@ -234,13 +234,13 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/tvCShoesTag"
+                android:id="@+id/tvClShoesTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Admission:" />
 
             <TextView
-                android:id="@+id/tvCShoes"
+                android:id="@+id/tvClShoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Trainers or Soft Shoes" />

@@ -15,7 +15,7 @@ import android.widget.RatingBar;
 import android.widget.SimpleAdapter;
 
 import com.kent.hottnights.R;
-import com.kent.hottnights.adapters.ReviewAdapter;
+import com.kent.hottnights.adapters.ClubReviewAdapter;
 import com.kent.hottnights.leftactivities.ClubListFragment;
 import com.kent.hottnights.objects.ClubReviews;
 
@@ -83,7 +83,7 @@ public class ClubReviewFragment extends ListFragment {
 		//SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), cList, R.layout.club_review_layout, from, to);
 		
 		Log.i("OCVCRFA1", "before the adapter is set");
-		ReviewAdapter adapter = new ReviewAdapter(getActivity().getBaseContext(), arrayRev);
+		ClubReviewAdapter adapter = new ClubReviewAdapter(getActivity().getBaseContext(), arrayRev);
 		Log.i("OCVCRFA2", "after the adapter is set");
 		setListAdapter(adapter);
 		

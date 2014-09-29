@@ -6,6 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="fbLogin"> Login With FaceBook</string>
     <string name="twitLogin">Login With Twitter</string>
+    
+    <string name="facebook_app_id">1492422404349391</string>
     <string name="clubabout">blah blah blah blah blah blah 
         blah blah blah blah blah blah blah blah 
         blah blah blah blah blah blah blah blah 
@@ -72,5 +74,97 @@
         <item>1</item>
         
     </array>
-
+    
+    <array name="photoid">
+        <item>31</item>
+        <item>42</item>
+        <item>23</item>
+        <item>54</item>
+        <item>16</item>
+        
+    </array>
+    <string-array name="photourls">
+       <item>http://1.bp.blogspot.com/-_hKFc0x-h-A/UPQ7FiGdA9I/AAAAAAAAA-8/K2VGZSxgGF0/s1600/76593_451693141540338_203048964_n.jpg</item>
+       <item >http://2.bp.blogspot.com/-NIayBGxkONU/UPQ7FKM_1MI/AAAAAAAAA-0/5RTpqIRxnL4/s1600/533054_394896027220050_1609823675_n.jpg</item>
+       <item >http://www.igrealty.com/wp-content/uploads/2014/08/suga.jpg</item>
+       <item >http://newswire.net/public/article/e0/25/25bb_ac8f.jpg</item>
+    </string-array>
+    
+<!-- STRINGS FOR EVENTS LIST -->
+ <string-array name="evListimgs">
+        <item>R.drawable.icon_home</item>
+        <item>R.drawable.ic_launcher</item>
+        <item>R.drawable.icon_profile</item>
+        <item>R.drawable.icon_launcher</item>
+        <item>R.drawable.icon_home</item>
+    </string-array>
+    
+    
+    <string-array name="evListnames">
+        <item>TYT</item>
+        <item>All Out</item>
+        <item>SoundBang</item>
+        <item>Scorch</item>
+        <item>Scabout</item>
+    </string-array>
+    <string-array name="evListdescr">
+        <item>1.This is one of the EVENTS being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>2.This is one of the EVENTA being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>3.This is one of the EVENTB being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>4.This is one of the EVENTC being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+        <item>5.This is one of the EVENTD being displayed. Basically a ver
+            generic set of words so i would know how this works with arrays
+            im not sure if i have a limit but i need just enough to be scrollable
+           . lets see how this goes</item>
+    </string-array>
+    
+    
+    <!-- ARRAYS FOR EVENTS CONTACT SECTION -->
+    <array name="evConImgs">
+         <item>R.drawable.icon_home</item>
+        <item>R.drawable.ic_launcher</item>
+        <item>R.drawable.icon_profile</item>
+    </array>
+    
+    <string-array name="evConName">
+        <item >Hutchy</item>
+        <item>Biggest</item>
+        <item>Dre/Fresh Prince</item>
+    </string-array>
+    
+    <string-array name="evConNum">
+        <item>235-3342</item>
+        <item>254-6683</item>
+        <item>232-0183</item>
+    </string-array>
+    
+    <string-array name="evConEmail">
+        <item>megaslut@whores.inc</item>
+        <item>shmurdakilla@tweakers.com</item>
+        <item>degaldempotsalt@scab.com</item>
+    </string-array>
+    
+    <string-array name="evConFbk">
+        <item >www.facebook.com/hutchy</item>
+        <item >www.facebook.com/biggest</item>
+        <item >www.facebook.com/scabtacular</item>
+    </string-array>
+    
+    <string-array name="evConTwit">
+        <item >/@Hutchy</item>
+        <item >/@ShmurdaKilla</item>
+        <item >/@Freshest</item>
+    </string-array>
 </resources>
