@@ -184,5 +184,10 @@ public class MainMenuActivity extends FragmentActivity implements
 	{
 		return token;
 	}
+	
+	public void dothedew()
+	{
+		
+	}
 
 }

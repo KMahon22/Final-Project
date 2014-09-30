@@ -6,6 +6,7 @@
 package com.kent.hottnights;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.json.JSONException;
@@ -19,6 +20,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -32,7 +34,6 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
-import com.kent.hottnights.leftactivities.ShareMainFragment;
 
 //import android.R;
 
@@ -40,7 +41,12 @@ public class SplashScreen extends Fragment {
 
 	@InjectView(R.drawable.splash)
 	ImageView splash;
+	
+	private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
+	private static final String PENDING_PUBLISH_KEY = "pendingPublishReauthorization";
+	private boolean pendingPublishReauthorization = false;
 	private static final String TAG = "SplashScreen";
+	Button shareButton;
 	
 	private UiLifecycleHelper uiHelper;
 	private Session.StatusCallback callback = new Session.StatusCallback() {
@@ -60,15 +66,28 @@ public class SplashScreen extends Fragment {
 		// return super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.login, container, false);
 
-		LoginButton authButton = (LoginButton) view
-				.findViewById(R.id.login_button);
+		LoginButton authButton = (LoginButton) view.findViewById(R.id.login_button);
 		authButton.setFragment(this);
 		authButton.setReadPermissions(Arrays.asList("user_likes", "user_status"));
+		
+		shareButton = (Button) view.findViewById(R.id.shareButton);
+		
+		shareButton.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View v) {
+		        publishStory();        
+		    }
+		});
 		
 		Session session = Session.getActiveSession();
 	    if (session != null && session.isOpened()) {
 	        // Get the user's data
 	        makeMeRequest(session);
+	    }
+	    
+	    if (savedInstanceState != null) {
+	        pendingPublishReauthorization = 
+	            savedInstanceState.getBoolean(PENDING_PUBLISH_KEY, false);
 	    }
 		return view;
 	}
@@ -106,12 +125,19 @@ public class SplashScreen extends Fragment {
 		 if (session != null && session.isOpened()) {
 		        // Get the user's data.
 		        makeMeRequest(session);
-		        MainMenuActivity.setToken(1);
+		       // MainMenuActivity.setToken(1);
+		        shareButton.setVisibility(View.VISIBLE);
 		     //   ShareMainFragment.shareButton.setVisibility(View.VISIBLE);
+		        if (pendingPublishReauthorization && 
+		                state.equals(SessionState.OPENED_TOKEN_UPDATED)) {
+		            pendingPublishReauthorization = false;
+		            publishStory();
+		        }
 		    } else if (session.isClosed())
 		    {
-		    	MainMenuActivity.setToken(0);
+		    	//MainMenuActivity.setToken(0);
 		    	// ShareMainFragment.shareButton.setVisibility(View.INVISIBLE);
+		    	shareButton.setVisibility(View.INVISIBLE);
 		    }
 		if (state.isOpened()) {
 			Log.i(TAG, "Logged in...");
@@ -121,20 +147,22 @@ public class SplashScreen extends Fragment {
 		}
 	}
 	
-	private void publishStory() {
+	
+		public void publishStory() {
+	 try{
 	    Session session = Session.getActiveSession();
 
 	    if (session != null){
 
 	        // Check for publish permissions    
-	       /* List<String> permissions = session.getPermissions();
+	        List<String> permissions = session.getPermissions();
 	        if (!isSubsetOf(PERMISSIONS, permissions)) {
 	            pendingPublishReauthorization = true;
 	            Session.NewPermissionsRequest newPermissionsRequest = new Session
 	                    .NewPermissionsRequest(this, PERMISSIONS);
 	        session.requestNewPublishPermissions(newPermissionsRequest);
 	            return;
-	        } */
+	        } 
 
 	        Bundle postParams = new Bundle();
 	        postParams.putString("name", "Facebook SDK for Android");
@@ -175,8 +203,22 @@ public class SplashScreen extends Fragment {
 
 	        RequestAsyncTask task = new RequestAsyncTask(request);
 	        task.execute();
-	    }
+	    } 
+	    
+	} catch (Exception e)
+	{
+		Log.i("SPLASH", e.getMessage());
+	}
 
+	}
+	
+	private boolean isSubsetOf(Collection<String> subset, Collection<String> superset) {
+	    for (String string : subset) {
+	        if (!superset.contains(string)) {
+	            return false;
+	        }
+	    }
+	    return true;
 	}
 
 	@Override
@@ -218,6 +260,7 @@ public class SplashScreen extends Fragment {
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
+		outState.putBoolean(PENDING_PUBLISH_KEY, pendingPublishReauthorization);
 		uiHelper.onSaveInstanceState(outState);
 	}
 	/*

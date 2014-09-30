@@ -14,8 +14,8 @@
 
     <ImageView
         android:id="@+id/imgLog"
-        android:layout_width="312dp"
-        android:layout_height="342dp"
+        android:layout_width="192dp"
+        android:layout_height="210dp"
         android:layout_gravity="center"
         android:src="@drawable/loginimg" />
 
@@ -34,6 +34,16 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="30dp" />
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Share"
+        android:textStyle="bold"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/btnTwitLogin"

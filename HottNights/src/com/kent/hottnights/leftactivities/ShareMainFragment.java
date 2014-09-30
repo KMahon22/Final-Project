@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 
 import com.kent.hottnights.MainMenuActivity;
 import com.kent.hottnights.R;
+import com.kent.hottnights.SplashScreen;
 import com.special.ResideMenu.ResideMenu;
 
 public class ShareMainFragment extends Fragment{
@@ -17,8 +18,9 @@ public class ShareMainFragment extends Fragment{
 	
 	private View parentView;
 	private ResideMenu resideMenu;
-	public static Button shareButton;
+	public Button shareButton;
 	private int toker;
+	SplashScreen blue;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +49,17 @@ public class ShareMainFragment extends Fragment{
 		{
 			shareButton.setVisibility(View.INVISIBLE);
 		}
+		
+		shareButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//publishStory();
+				blue.publishStory();
+				
+			}
+		});
 		super.onViewCreated(view, savedInstanceState);
 	}
 	private void setUpViews() {
