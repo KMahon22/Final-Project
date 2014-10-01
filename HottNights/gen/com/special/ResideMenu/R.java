@@ -123,20 +123,20 @@ public final class R {
 		public static final int com_facebook_usersettingsfragment_login_button = 0x7f0500af;
 		public static final int com_facebook_usersettingsfragment_logo_image = 0x7f0500ad;
 		public static final int com_facebook_usersettingsfragment_profile_name = 0x7f0500ae;
-		public static final int iv_background = 0x7f0500e7;
-		public static final int iv_icon = 0x7f0500ef;
-		public static final int iv_shadow = 0x7f0500e8;
+		public static final int iv_background = 0x7f0500e8;
+		public static final int iv_icon = 0x7f0500f0;
+		public static final int iv_shadow = 0x7f0500e9;
 		public static final int large = 0x7f050002;
-		public static final int layout_left_menu = 0x7f0500ec;
-		public static final int layout_right_menu = 0x7f0500ee;
+		public static final int layout_left_menu = 0x7f0500ed;
+		public static final int layout_right_menu = 0x7f0500ef;
 		public static final int normal = 0x7f050001;
 		public static final int picker_subtitle = 0x7f0500a5;
-		public static final int selection_profile_pic = 0x7f0500e9;
+		public static final int selection_profile_pic = 0x7f0500ea;
 		public static final int small = 0x7f050000;
-		public static final int sv_left_menu = 0x7f0500eb;
-		public static final int sv_right_menu = 0x7f0500ed;
-		public static final int tvProfileResideText = 0x7f0500ea;
-		public static final int tv_title = 0x7f0500f0;
+		public static final int sv_left_menu = 0x7f0500ec;
+		public static final int sv_right_menu = 0x7f0500ee;
+		public static final int tvProfileResideText = 0x7f0500eb;
+		public static final int tv_title = 0x7f0500f1;
 	}
 	public static final class layout {
 		public static final int com_facebook_friendpickerfragment = 0x7f030024;
@@ -154,8 +154,8 @@ public final class R {
 		public static final int com_facebook_search_bar_layout = 0x7f030030;
 		public static final int com_facebook_tooltip_bubble = 0x7f030031;
 		public static final int com_facebook_usersettingsfragment = 0x7f030032;
-		public static final int residemenu = 0x7f03003d;
-		public static final int residemenu_item = 0x7f03003e;
+		public static final int residemenu = 0x7f03003f;
+		public static final int residemenu_item = 0x7f030040;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f080042;

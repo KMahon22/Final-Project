@@ -28,14 +28,14 @@ public class ShareMainFragment extends Fragment{
 		// TODO Auto-generated method stub
 		//return super.onCreateView(inflater, container, savedInstanceState);
 		
-		parentView = inflater.inflate(R.layout.share_main_fragment, container, false);
+		parentView = inflater.inflate(R.layout.media_fragment, container, false);
 		
 		
 		
 	
 		return parentView;
 	}
-	
+	/*
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -62,6 +62,9 @@ public class ShareMainFragment extends Fragment{
 		});
 		super.onViewCreated(view, savedInstanceState);
 	}
+	
+	*/
+	
 	private void setUpViews() {
 		// TODO Auto-generated method stub
 		MainMenuActivity parentActivity = (MainMenuActivity) getActivity();

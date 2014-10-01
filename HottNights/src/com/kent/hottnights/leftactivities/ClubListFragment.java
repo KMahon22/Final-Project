@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -26,9 +27,20 @@ public class ClubListFragment extends ListFragment {
 	//private View clublistview;
 	private String[] cname;
 	private String[] cdescr;
+	//private TypedArray cil;
 	private int[] cil;
 	private View replaceme;
 	Fragment frag;
+	
+	public int[] flags = new int[]{
+			R.drawable.ic_launcher,
+			R.drawable.calendar,
+			R.drawable.ic_launcher,
+			R.drawable.ic_launcher,
+			R.drawable.ic_launcher
+	};
+	
+	
 	
 	
 	public static ClubListFragment listFraggg()
@@ -48,21 +60,31 @@ public class ClubListFragment extends ListFragment {
 		
 		cname = getResources().getStringArray(R.array.cnames);
 		cdescr = getResources().getStringArray(R.array.cdescr);
-		cil = getResources().getIntArray(R.array.cimgs);
+		cil = getResources().getIntArray(R.array.cimgs);//obtainTypedArray(R.array.cimgs);
+		if (cil == null)
+		{
+			Log.i("CIL", "aint shit here");
+		}
+		
 		
 		for(int i = 0; i<5;i++)
 		{
 			HashMap<String,String> hm = new HashMap<String,String>();
+			//ArrayList stuff = new ArrayList();
+			//stuff ={cname[i], cdescr[i], cil[i]);
+			
+		
 			hm.put("name", cname[i]);
 			hm.put("descr", cdescr[i]);
 			hm.put("imgs", Integer.toString(cil[i]));
+			Log.i("SBAIMG", Integer.toString(cil[i]));
 			cList.add(hm);
 		}
 		
 		
-		String[] from = {"name","descr","imgs"};
+		String[] from = {"imgs","name","descr"};
 		
-		int[] to = {R.id.tvClubListName, R.id.tvClubListDescr, R.id.ivClubListImg};
+		int[] to = { R.id.ivClubListImg, R.id.tvClubListName, R.id.tvClubListDescr};
 		
 		
 		SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), cList, R.layout.club_list_layout_fragment, from, to);

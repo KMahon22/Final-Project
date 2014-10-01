@@ -48,6 +48,10 @@ public class SplashScreen extends Fragment {
 	private static final String TAG = "SplashScreen";
 	Button shareButton;
 	
+	String fbTitle;
+	String fbDescr;
+	String fbCaption;
+	
 	private UiLifecycleHelper uiHelper;
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 		@Override
@@ -64,7 +68,7 @@ public class SplashScreen extends Fragment {
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		// return super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.login, container, false);
+		View view = inflater.inflate(R.layout.login_layout, container, false);
 
 		LoginButton authButton = (LoginButton) view.findViewById(R.id.login_button);
 		authButton.setFragment(this);
@@ -90,6 +94,13 @@ public class SplashScreen extends Fragment {
 	            savedInstanceState.getBoolean(PENDING_PUBLISH_KEY, false);
 	    }
 		return view;
+	}
+	
+	public void infoToAccept(String bop)
+	{
+		fbTitle = bop;
+		//fbDescr = bop[2];
+		//fbCaption = bop[3];
 	}
 	
 	private void makeMeRequest(final Session session) {
@@ -165,11 +176,11 @@ public class SplashScreen extends Fragment {
 	        } 
 
 	        Bundle postParams = new Bundle();
-	        postParams.putString("name", "Facebook SDK for Android");
-	        postParams.putString("caption", "Build great social apps and get more installs.");
-	        postParams.putString("description", "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
-	        postParams.putString("link", "https://developers.facebook.com/android");
-	        postParams.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+	        postParams.putString("name", fbTitle);
+	        postParams.putString("caption", "random stuff");
+	        postParams.putString("description", "randomer");
+	        postParams.putString("link", "http://www.destinythegame.com/uk/en");
+	        postParams.putString("picture", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRIBE1p9ttyEXQenafrpKphJ9NCCB2A8dZLCaYcdjIflXmaqQO1");
 
 	        Request.Callback callback= new Request.Callback() {
 	            public void onCompleted(Response response) {
@@ -282,4 +293,6 @@ public class SplashScreen extends Fragment {
 	 * public void startMain() { Intent intent = new Intent(this,
 	 * MainMenuActivity.class); startActivity(intent); finish(); }
 	 */
+	
+	
 }

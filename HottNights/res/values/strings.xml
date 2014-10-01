@@ -27,13 +27,13 @@
         blah blah blah blah blah blah blah blah </string>
 
     
-    <string-array name="cimgs">
+    <array name="cimgs">
         <item>R.drawable.icon_home</item>
         <item>R.drawable.ic_launcher</item>
         <item>R.drawable.icon_profile</item>
         <item>R.drawable.icon_launcher</item>
         <item>R.drawable.icon_home</item>
-    </string-array>
+    </array>
     
     
     <string-array name="cnames">
@@ -129,6 +129,15 @@
             im not sure if i have a limit but i need just enough to be scrollable
            . lets see how this goes</item>
     </string-array>
+    
+    <string-array name="radioButton">
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+        <item>false</item>
+        <item>false</item>
+    </string-array>
+    
     
     
     <!-- ARRAYS FOR EVENTS CONTACT SECTION -->

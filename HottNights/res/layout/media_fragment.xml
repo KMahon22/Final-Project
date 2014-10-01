@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+        
+     <fragment
+        android:id="@+id/share_main_fragment"
+        android:name="com.kent.hottnights.login.ShareListFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+         />
+     <fragment
+         android:id="@+id/share_main_fragment_fb"
+        android:name="com.kent.hottnights.SplashScreen"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp" />
+     
+     </LinearLayout>
+
+

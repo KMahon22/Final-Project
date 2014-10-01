@@ -19,11 +19,12 @@ import com.kent.hottnights.leftactivities.ClubListFragment;
 import com.kent.hottnights.leftactivities.EventListFragment;
 import com.kent.hottnights.leftactivities.MapMainFragment;
 import com.kent.hottnights.leftactivities.ShareMainFragment;
+import com.kent.hottnights.login.ShareListFragment;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 
 public class MainMenuActivity extends FragmentActivity implements
-		View.OnClickListener {
+		View.OnClickListener, HotComm {
 
 	public static ResideMenu resideMenu; //this used to be private
 	public static int token;
@@ -34,6 +35,8 @@ public class MainMenuActivity extends FragmentActivity implements
 	private ResideMenuItem itemMap;
 	private ResideMenuItem itemShare;
 	
+	//public SplashScreen s2;
+	
 	
 	private ResideMenuItem itemMedia;
 	public static FragmentManager fragmentManager;
@@ -41,7 +44,7 @@ public class MainMenuActivity extends FragmentActivity implements
 	//@InjectView(R.id.title_bar_left_menu)
 	//Button leftMenu;
 	
-	
+	public String[] sendstuff;
 	private TextView header;
 
 	@Override
@@ -57,6 +60,7 @@ public class MainMenuActivity extends FragmentActivity implements
 		changeFragment(new EventListFragment());
 		
 		fragmentManager = getSupportFragmentManager();
+		
 		
 		
 	}
@@ -188,6 +192,18 @@ public class MainMenuActivity extends FragmentActivity implements
 	public void dothedew()
 	{
 		
+	}
+
+	public void eventInfo(String a) {
+		// TODO Auto-generated method stub
+		//String apple = a;
+		//String pear = b;
+		//String grape = c;
+	String title = a;
+		
+	SplashScreen s2 = (SplashScreen) fragmentManager.findFragmentById(R.id.share_main_fragment_fb);
+		s2.infoToAccept(title);
+	
 	}
 
 }

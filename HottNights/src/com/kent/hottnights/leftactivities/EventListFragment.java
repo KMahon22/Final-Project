@@ -7,6 +7,7 @@ import java.util.List;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,6 +90,7 @@ public class EventListFragment  extends ListFragment{
 		super.onListItemClick(l, v, position, id);
 		Fragment frag = new EventMainFragment();
 		MainMenuActivity.fragmentManager.beginTransaction().replace(R.id.main_fragment, frag).addToBackStack(null).commit();
+		Log.i("OLICINEVENT", "look i clickable");
 	}
 
 }
