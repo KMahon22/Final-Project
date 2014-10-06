@@ -41,7 +41,7 @@ public class EventListAdapter extends BaseAdapter {
 	@Override
 	public long getItemId(int position) {
 		// TODO Auto-generated method stub
-		return eventList.get(position).getEventid();
+		return eventList.indexOf(getItem(position));
 	}
 
 	@Override

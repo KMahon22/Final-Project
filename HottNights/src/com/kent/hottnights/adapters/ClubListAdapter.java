@@ -41,8 +41,9 @@ public class ClubListAdapter extends BaseAdapter {
 	@Override
 	public long getItemId(int position) {
 		// TODO Auto-generated method stub
-		int i = Integer.parseInt(clubList.get(position).getClub_id());
-		return i;
+		//int i = Integer.parseInt(clubList.get(position).getClub_id());
+		//return i;
+		return clubList.indexOf(getItem(position));
 	}
 
 	@Override

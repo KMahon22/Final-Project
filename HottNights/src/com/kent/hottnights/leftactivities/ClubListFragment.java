@@ -63,7 +63,7 @@ public class ClubListFragment extends ListFragment {
 		
 		
 		// List<HashMap<String, String>> cList = new
-		// ArrayList<HashMap<String,String>>();
+		 //ArrayList<HashMap<String,String>>();
 
 		cname = getResources().getStringArray(R.array.cnames);
 		cdescr = getResources().getStringArray(R.array.cdescr);
@@ -106,9 +106,9 @@ public class ClubListFragment extends ListFragment {
 		int[] to = { R.id.ivClubListImg, R.id.tvClubListName,
 				R.id.tvClubListDescr };
 
-		// SimpleAdapter adapter = new
-		// SimpleAdapter(getActivity().getBaseContext(), cList,
-		// R.layout.club_list_layout_fragment, from, to);
+		 //SimpleAdapter adapter = new
+		 //SimpleAdapter(getActivity().getBaseContext(), cList,
+		 //R.layout.club_list_layout_fragment, from, to);
 		ClubListAdapter adapter = new ClubListAdapter(getActivity()
 				.getBaseContext(), cList);
 		setListAdapter(adapter);
@@ -126,7 +126,7 @@ public class ClubListFragment extends ListFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
-		setUpViews(view);
+		//setUpViews(view);
 		
 	}
 	private void setUpViews(View view) {
