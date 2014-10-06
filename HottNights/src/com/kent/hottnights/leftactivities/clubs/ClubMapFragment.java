@@ -40,7 +40,7 @@ public class ClubMapFragment extends Fragment{
 		Ma = (MainMenuActivity) getActivity();
 		mapFragment = SupportMapFragment.newInstance();
 		FragmentTransaction fragmenttransaction = getFragmentManager().beginTransaction();
-		fragmenttransaction.add(R.id.map, mapFragment);
+		fragmenttransaction.add(R.id.mapClub, mapFragment);
 		fragmenttransaction.commit();
 		
 		/*try {

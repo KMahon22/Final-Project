@@ -10,6 +10,15 @@ public class ClubPhotos {
 		this.photoId = photoId;
 		this.photoUrl = photoUrl;
 	}
+	
+	
+
+	public ClubPhotos(String photoUrl) {
+		super();
+		this.photoUrl = photoUrl;
+	}
+
+
 
 	public int getPhotoId() {
 		return photoId;

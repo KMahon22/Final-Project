@@ -31,7 +31,7 @@
             tools:context=".MainActivity" />
     </LinearLayout>
 
-    <FrameLayout
+   <!--   <FrameLayout
         android:id="@+id/ignored_view"
         android:layout_width="fill_parent"
         android:layout_height="120dp"
@@ -51,5 +51,5 @@
             android:textColor="#9a9a9a"
             android:textSize="17sp" />
     </FrameLayout>
-
+	-->
 </RelativeLayout>

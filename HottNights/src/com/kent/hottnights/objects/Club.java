@@ -1,20 +1,38 @@
 package com.kent.hottnights.objects;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Club {
 
 	private String club_id;
 	private String club_name;
 	private String club_pic;
 	private String club_about;
-	private String club_lat;
-	private String club_long;
+	private float club_lat;
+	private float club_long;
 	private int feature_id;
 	private int contact_id;
 	private int drinks_id;
 	private int dress_id;
+	private int photo_id;
+	
+	
+
+	public Club() {
+		
+	}
+
+	
+	public Club(String club_name, String club_pic, String club_about) {
+		super();
+		this.club_name = club_name;
+		this.club_pic = club_pic;
+		this.club_about = club_about;
+	}
+
 
 	public Club(String club_id, String club_name, String club_pic,
-			String club_about, String club_lat, String club_long) {
+			String club_about, float club_lat, float club_long) {
 		super();
 		this.club_id = club_id;
 		this.club_name = club_name;
@@ -56,19 +74,19 @@ public class Club {
 		this.club_about = club_about;
 	}
 
-	public String getClub_lat() {
+	public float getClub_lat() {
 		return club_lat;
 	}
 
-	public void setClub_lat(String club_lat) {
+	public void setClub_lat(float club_lat) {
 		this.club_lat = club_lat;
 	}
 
-	public String getClub_long() {
+	public float getClub_long() {
 		return club_long;
 	}
 
-	public void setClub_long(String club_long) {
+	public void setClub_long(float club_long) {
 		this.club_long = club_long;
 	}
 
@@ -104,4 +122,23 @@ public class Club {
 		this.dress_id = dress_id;
 	}
 
+	
+	
+	
+	
+	public int getPhoto_id() {
+		return photo_id;
+	}
+
+	public void setPhoto_id(int photo_id) {
+		this.photo_id = photo_id;
+	}
+
+	public LatLng clubLatLng()
+	{
+		return new LatLng(club_lat,club_long);
+	}
+	
+	
+	
 }

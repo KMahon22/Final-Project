@@ -3,7 +3,7 @@ package com.kent.hottnights.objects;
 public class ClubReviews {
 
 	private int reviewId;
-	private int reviewUPic;
+	private String reviewUPic; //to change to string so picasso can load them
 	private String reviewUName;
 	private int club_id;
 	private String reviewDescr;
@@ -18,13 +18,19 @@ public class ClubReviews {
 		this.reviewRating = reviewRating;
 	}*/
 	
-	public ClubReviews(int reviewUPic, String reviewUName, String reviewDescr,
+	
+	
+	public ClubReviews(String reviewUPic, String reviewUName, String reviewDescr,
 			int reviewRating) {
 		super();
 		this.reviewUPic = reviewUPic;
 		this.reviewUName = reviewUName;
 		this.reviewDescr = reviewDescr;
 		this.reviewRating = reviewRating;
+	}
+
+	public ClubReviews() {
+	
 	}
 
 	public int getReviewId() {
@@ -69,11 +75,11 @@ public class ClubReviews {
 		this.reviewUName = reviewUName;
 	}
 
-	public int getReviewUPic() {
+	public String getReviewUPic() {
 		return reviewUPic;
 	}
 
-	public void setReviewUPic(int reviewUPic) {
+	public void setReviewUPic(String reviewUPic) {
 		this.reviewUPic = reviewUPic;
 	}
 

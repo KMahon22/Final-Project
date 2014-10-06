@@ -14,17 +14,29 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.kent.hottnights.communicators.ClubListComm;
+import com.kent.hottnights.communicators.EventListComm;
+import com.kent.hottnights.communicators.HotComm;
 import com.kent.hottnights.leftactivities.CalendarMainFragment;
 import com.kent.hottnights.leftactivities.ClubListFragment;
 import com.kent.hottnights.leftactivities.EventListFragment;
 import com.kent.hottnights.leftactivities.MapMainFragment;
 import com.kent.hottnights.leftactivities.ShareMainFragment;
-import com.kent.hottnights.login.ShareListFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubAboutFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubContactFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubFeaturesFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubPhotoFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubReviewFragment;
+import com.kent.hottnights.leftactivities.events.EventAboutFragment;
+import com.kent.hottnights.leftactivities.events.EventContactsFragment;
+import com.kent.hottnights.leftactivities.events.EventFeaturesFragment;
+import com.kent.hottnights.leftactivities.events.EventMapFragment;
+import com.kent.hottnights.leftactivities.events.EventPromoFragment;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 
 public class MainMenuActivity extends FragmentActivity implements
-		View.OnClickListener, HotComm {
+		View.OnClickListener, HotComm, ClubListComm, EventListComm {
 
 	public static ResideMenu resideMenu; //this used to be private
 	public static int token;
@@ -46,6 +58,19 @@ public class MainMenuActivity extends FragmentActivity implements
 	
 	public String[] sendstuff;
 	private TextView header;
+	
+	//variables for the interface communication
+	public String clcClubId; 
+	public String clcClubName;
+	public String clcClubPic;
+	public String clcClubAbout;
+	public float clcClubLat;
+	public float clcClubLong;
+	public int clcFeatureId;
+	public int clcContactId;
+	public int clcDrinksId;
+	public int clcDressId;
+	public int clcPhotoId;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -194,6 +219,7 @@ public class MainMenuActivity extends FragmentActivity implements
 		
 	}
 
+	///HottComm interface method
 	public void eventInfo(String a) {
 		// TODO Auto-generated method stub
 		//String apple = a;
@@ -204,6 +230,51 @@ public class MainMenuActivity extends FragmentActivity implements
 	SplashScreen s2 = (SplashScreen) fragmentManager.findFragmentById(R.id.share_main_fragment_fb);
 		s2.infoToAccept(title);
 	
+	}
+
+	////ClubListComm interface method
+	@Override
+	public void allClubInfo(String pClubId, String pClubName, String pClubPic,
+			String pClubAbout, float pClubLat, float pClubLong, int pFeatureId,
+			int pContactId, int pDrinksId, int pDressId, int pPhotoId) {
+		// TODO Auto-generated method stub
+		 clcClubId = pClubId;
+		 clcClubName = pClubName;
+		 clcClubPic = pClubPic;
+		 clcClubAbout = pClubAbout;
+		 clcClubLat = pClubLat;
+		 clcClubLong = pClubLong;
+		 clcFeatureId = pFeatureId;
+		 clcContactId = pContactId;
+		 clcDrinksId = pDrinksId;
+		 clcDressId = pDressId;
+		 clcPhotoId = pPhotoId;
+		
+		//ClubAboutFragment caf = (ClubAboutFragment) fragmentManager.findFragmentById(R.id.club_about_fragment);
+		ClubAboutFragment caf = new ClubAboutFragment(clcClubAbout, clcClubPic);
+		// caf.GetAboutInfo(clcClubAbout);
+		ClubReviewFragment crf = new ClubReviewFragment(Integer.parseInt(clcClubId));
+		ClubPhotoFragment cpf = new ClubPhotoFragment(clcPhotoId);
+		ClubFeaturesFragment cfc = new ClubFeaturesFragment(clcFeatureId, clcDrinksId, clcDressId);
+		ClubContactFragment ccf = new ClubContactFragment(clcContactId);
+		
+	}
+	
+	//EVENT LIST INTERFACE
+	@Override
+	public void allEventInfo(int pEventId, String pEventName, String pEventPic,
+			String pEventDescr, String pEventAbout, float pEventLat,
+			float pEventLong, int pFeatureId, int pDrinksId, int pDressId,
+			int pPhotoId) {
+		
+		EventAboutFragment eaf = new EventAboutFragment(pEventPic, pEventAbout);
+		EventPromoFragment epf = new EventPromoFragment(pPhotoId);
+		EventFeaturesFragment eff = new EventFeaturesFragment(pFeatureId, pDrinksId, pDressId);
+		EventMapFragment emp = new EventMapFragment(pEventLat, pEventLong);
+		EventContactsFragment cf = new EventContactsFragment( pEventId);
+		// TODO Auto-generated method stub
+		Log.i("INSIDEMAININTE", pEventName);
+		
 	}
 
 }

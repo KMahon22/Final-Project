@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.kent.hottnights.HotComm;
 import com.kent.hottnights.R;
 import com.kent.hottnights.adapters.ShareAdapter;
+import com.kent.hottnights.communicators.HotComm;
 import com.kent.hottnights.objects.ShareListObjs;
 
 public class ShareListFragment extends ListFragment {

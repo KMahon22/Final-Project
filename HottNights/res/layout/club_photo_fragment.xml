@@ -14,7 +14,7 @@
 
      <fragment 
         android:id="@+id/club_list_fragment"
-        android:name="com.kent.hottnights.leftactivities.ClubPhotoFragment"
+        android:name="com.kent.hottnights.leftactivities.events.EventPromoFragment"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 

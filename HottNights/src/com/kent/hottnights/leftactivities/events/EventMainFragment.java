@@ -81,8 +81,14 @@ public class EventMainFragment extends Fragment {
 			if (position == 0 ){
 				return EventAboutFragment.eventAboutFragment();
 			}
+			else if (position == 1){
+				return EventPromoFragment.posterFrag();
+			}
 			else if (position == 2 ){
 				return EventFeaturesFragment.eventFeaturesFragment();
+			}
+			else if (position == 3 ){
+				return EventMapFragment.mappyFrag();
 			}
 			else if (position == 4 ){
 				return EventContactsFragment.eContacts();

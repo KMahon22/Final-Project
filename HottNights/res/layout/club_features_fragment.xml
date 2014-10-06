@@ -237,7 +237,7 @@
                 android:id="@+id/tvClShoesTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Admission:" />
+                android:text="Shoes:" />
 
             <TextView
                 android:id="@+id/tvClShoes"

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.kent.hottnights.MainMenuActivity;
 import com.kent.hottnights.R;
 import com.kent.hottnights.objects.ClubReviews;
+import com.squareup.picasso.Picasso;
 
 public class ClubReviewAdapter extends BaseAdapter {
 
@@ -76,7 +77,13 @@ public class ClubReviewAdapter extends BaseAdapter {
 			
 			conv = (float) which.getReviewRating();
 			
-			holder.revPic.setImageResource(which.getReviewUPic());
+			//holder.revPic.setImageResource(which.getReviewUPic());
+			Picasso.with(context) //
+	        .load(which.getReviewUPic()) //
+	        .placeholder(R.drawable.ic_launcher) //
+	        .error(R.drawable.icon_home) //
+	        .fit() //
+	        .into(holder.revPic);
 			
 			holder.revUName.setText(which.getReviewUName());
 			
