@@ -11,5 +11,7 @@
 	<classpathentry exported="true" kind="lib" path="/Users/Kent/Desktop/Android/Library Jars/RoboGuice_Libs/roboguice-2.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/Users/Kent/Desktop/Android/Library Jars/Picasso/picasso-2.3.4.jar"/>
 	<classpathentry exported="true" kind="lib" path="/FacebookSDK/libs/bolts-android-1.1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Kent/Desktop/Android/Library Jars/MSQLAsync/android-async-http-1.4.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Kent/Desktop/Android/Library Jars/MSQLAsync/gson-2.2.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

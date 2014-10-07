@@ -1,8 +1,10 @@
 package com.kent.hottnights.database;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,7 +25,7 @@ import com.kent.hottnights.objects.Photos;
 
 public class HottDatabaseHandler extends SQLiteOpenHelper {
 
-	private static final int DB_VERSION = 8;
+	private static final int DB_VERSION = 10;
 	private static final String DB_NAME = "hottnights";
 
 	// CLUBTABLE NAME AND FIELDNAMES
@@ -320,13 +322,13 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 				+ " 'Absolut', " + " 'Ciroc'," + " 'Zinfadel'," + " 'Banks',"
 				+ " 'Gordans'," + " 'Smirnoff'," + " 'Jamesons')");
 
-		// populating the dress table
+		/*// populating the dress table
 		db.execSQL("INSERT INTO " + TABLE_DRESS + " Values (1," + " 'no',"
 				+ " 'no'," + " 'no'," + " 'no'," + " 'no')");
 		db.execSQL("INSERT INTO " + TABLE_DRESS + " Values (2," + " 'yes',"
 				+ " 'yes'," + " 'yes'," + " 'yes'," + " 'yes')");
 		db.execSQL("INSERT INTO " + TABLE_DRESS + " Values (3," + " 'maybe',"
-				+ " 'maybe'," + " 'maybe'," + " 'maybe'," + " 'maybe')");
+				+ " 'maybe'," + " 'maybe'," + " 'maybe'," + " 'maybe')"); */
 
 		// popuating the gas station table
 		db.execSQL("INSERT INTO " + TABLE_GS + " Values(1," + " 'Shell',"
@@ -658,6 +660,20 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 		return dressList;
 	}
 
+	public void insertDressCode(HashMap<String, String> queryValues)
+	{
+		SQLiteDatabase database = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put("dress_id", Integer.parseInt(queryValues.get("dress_id")));
+		values.put("dress_hat", queryValues.get("dress_hat"));
+		values.put("dress_hoodies", queryValues.get("dress_hoodies"));
+		values.put("dress_shirts", queryValues.get("dress_shirts"));
+		values.put("dress_pants", queryValues.get("dress_pants"));
+		values.put("dress_shoes", queryValues.get("dress_shoes"));
+		database.insert(TABLE_DRESS, null, values);
+		database.close();
+	}
+	
 	public ArrayList<GasStations> getGS() {
 		gsList.clear();
 		try {
