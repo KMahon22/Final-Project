@@ -30,6 +30,12 @@ public class EventMainFragment extends Fragment {
 	
 	private MyPagerAdapter adapter;
 	
+	
+	
+	public EventMainFragment() {
+	
+	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -70,6 +76,14 @@ public class EventMainFragment extends Fragment {
 		resideMenu.addIgnoredView(ignored_view);
 	}
 	
+	
+	/**
+	 * 
+	 * @author Kent
+	 *
+	 * This class is used to set up the sliding tab and pager views used to display
+	 * information from an event list item
+	 */
 	public class MyPagerAdapter extends FragmentPagerAdapter
 	{
 		private final String[] EVENTTABS = {"About","Promos", "Features", "Map", "Contact"};

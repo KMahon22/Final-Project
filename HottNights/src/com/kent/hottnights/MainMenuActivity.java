@@ -36,6 +36,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -119,7 +120,12 @@ public class MainMenuActivity extends FragmentActivity implements
 	public String getDressUrl; 
 	public String updatesyncs;
 	
+	//stupid shit for screen orientation changes
+	static String currentFragment;
+	static public Fragment fraggy;
 	
+	Button leftBut;
+	Button rightBut;
 	/**
 	 * onCreate(Bundle arg0) is called when activity is first started.
 	 * Resize menu is set up in here
@@ -137,11 +143,29 @@ public class MainMenuActivity extends FragmentActivity implements
 		mContext = this;
 		token = 0;
 		setUpMenu();
-		Log.i("Oncreate", "is this called");
 		fragmentManager = getSupportFragmentManager();
 		fragmentManager.beginTransaction().add(R.id.main_fragment, new EventListFragment()).commit();
+		Log.i("Oncreate", "is this called");
+		//fragmentManager = getSupportFragmentManager();
+		//fraggy = new EventListFragment();
+		
 		//changeFragment(new EventListFragment());
 
+	
+		/*
+		if(arg0 != null)
+		{
+			currentFragment = arg0.getString("currentfragment");
+			fraggy = fragmentManager.getFragment(arg0, currentFragment);
+			fragmentManager.beginTransaction().replace(R.id.main_fragment, fraggy);
+		}else
+		{
+			fragmentManager.beginTransaction().add(R.id.main_fragment, new EventListFragment()).commit();
+		}
+		
+		*/
+		
+		
 
 		prgDialog = new ProgressDialog(this);
 		prgDialog
@@ -203,7 +227,9 @@ public class MainMenuActivity extends FragmentActivity implements
 
 		resideMenu.addMenuItem(itemMedia, ResideMenu.DIRECTION_RIGHT);
 
-		findViewById(R.id.title_bar_left_menu).setOnClickListener(
+		leftBut = (Button) findViewById(R.id.title_bar_left_menu);
+		rightBut = (Button) findViewById(R.id.title_bar_right_menu);
+		leftBut.setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -213,7 +239,7 @@ public class MainMenuActivity extends FragmentActivity implements
 					}
 				});
 
-		findViewById(R.id.title_bar_right_menu).setOnClickListener(
+		rightBut.setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -244,6 +270,9 @@ public class MainMenuActivity extends FragmentActivity implements
 			header.setTextColor(Color.RED);
 			header.setBackgroundColor(Color.BLACK);
 			resideMenu.setBackground(R.drawable.evenback1); //triallll
+			leftBut.setBackgroundResource(R.drawable.redbutton);
+			rightBut.setBackgroundResource(R.drawable.redbutton);
+			
 
 		} else if (view == itemClubs) {
 			changeFragment(new ClubListFragment());
@@ -251,6 +280,8 @@ public class MainMenuActivity extends FragmentActivity implements
 			header.setTextColor(Color.parseColor("#0000E6"));
 			header.setBackgroundColor(Color.BLACK);
 			resideMenu.setBackground(R.drawable.turntables);
+			leftBut.setBackgroundResource(R.drawable.bluebutton);
+			rightBut.setBackgroundResource(R.drawable.bluebutton);
 		} else if (view == itemCalendar) {
 			changeFragment(new CalendarMainFragment());
 			header.setText("Calendar");
@@ -260,12 +291,16 @@ public class MainMenuActivity extends FragmentActivity implements
 			header.setTextColor(Color.parseColor("#006600"));
 			header.setBackgroundColor(Color.BLACK);
 			resideMenu.setBackground(R.drawable.mapback1);
+			leftBut.setBackgroundResource(R.drawable.greenbutton);
+			rightBut.setBackgroundResource(R.drawable.greenbutton);
 		} else if (view == itemShare) {
 			changeFragment(new ShareMainFragment());
 			header.setText("Share");
 			header.setTextColor(Color.parseColor("#CC5200"));
 			header.setBackgroundColor(Color.BLACK);
 			resideMenu.setBackground(R.drawable.shareback1);
+			leftBut.setBackgroundResource(R.drawable.orangebutton);
+			rightBut.setBackgroundResource(R.drawable.orangebutton);
 		} else if (view == itemMedia) {
 			//changeFragment(new SplashScreen());
 			syncSQLiteMySQLDB();
@@ -392,6 +427,10 @@ public class MainMenuActivity extends FragmentActivity implements
 
 	}
 
+	/**
+	 * This method makes the call to the MYSQL database to get all of the dress info it did not 
+	 * previously have
+	 */
 	// SYNCING SHIT
 	public void syncSQLiteMySQLDB() {
 		AsyncHttpClient client = new AsyncHttpClient();
@@ -433,6 +472,15 @@ public class MainMenuActivity extends FragmentActivity implements
 
 	}
 
+	
+	/**
+	 *
+	 * @param response The information retrieved from the php page 
+	 * 
+	 * This function inputs the the information retrieved from the MYSQLserver and puts it in the SQLiteDatabase
+	 * 		
+	 * 
+	 */
 	private void updateSQLite(String response) {
 		// TODO Auto-generated method stub
 
@@ -484,7 +532,13 @@ public class MainMenuActivity extends FragmentActivity implements
 		}
 
 	}
-
+/**
+ * 
+ * @param json This parameter contains the id of each row which is currently updated 
+ * 
+ * This function passes this information back to the server so the MYSQLDatabase would know 
+ * which rows are replicated/synced with the SQLiteDatabase on the phone
+ */
 	private void updateMySQLSyncSts(String json) {
 		// TODO Auto-generated method stub
 		System.out.println(json);
@@ -513,5 +567,24 @@ public class MainMenuActivity extends FragmentActivity implements
 		startActivity(objIntent);
 
 	}
-
+	
+	public static void currentFragmentOnScreen(String currFrag, Fragment eab)
+	{
+		currentFragment = currFrag;
+		fraggy = eab;
+	}
+	/*
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+		outState.putString("currentfragment", currentFragment);
+		FragmentManager fragmentManager2;
+		fragmentManager2 = getSupportFragmentManager();
+		Log.i("ISCFEMPTY", currentFragment + "");
+		Log.i("ISFRAGGYEMPTY", fraggy + "");
+		fragmentManager2.putFragment(outState, currentFragment, fraggy);
+		
+	}
+ */
 }

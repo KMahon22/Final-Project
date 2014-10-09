@@ -25,7 +25,13 @@
     <string name="email"><u>Email</u></string>
     <string name="facebook"><u>Facebook</u></string>
     <string name="twitter"><u>Twitter</u></string>
-    
+    <string-array name="EVENTTABS">
+       <item>About</item> 
+       <item>Promos</item>
+       <item>Features</item>
+       <item>Map</item>
+       <item>Contact</item>
+    </string-array>
     
     
     <string name="facebook_app_id">1492422404349391</string>

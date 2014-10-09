@@ -48,6 +48,10 @@ public class EventFeaturesFragment extends Fragment{
 	
 	
 	
+	public EventFeaturesFragment() {
+		
+	}
+
 	public EventFeaturesFragment(int featid, int did, int dsid) {
 		super();
 		this.featid = featid;

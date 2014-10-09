@@ -28,6 +28,12 @@ public class EventContactsFragment extends ListFragment {
 	HottDatabaseHandler db;
 	ArrayList<EventContact> ecFrmDb;
 	private static int event_id;
+	
+	
+
+	public EventContactsFragment() {
+		
+	}
 
 	public EventContactsFragment(int event_id) {
 		super();

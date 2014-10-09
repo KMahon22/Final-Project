@@ -40,6 +40,11 @@ public class EventMapFragment extends Fragment {
 	Button drive;
 	Button walk;
 	
+	
+
+	public EventMapFragment() {
+		
+	}
 
 	public EventMapFragment(float eLat, float eLong) {
 		super();

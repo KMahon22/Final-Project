@@ -20,6 +20,12 @@ public class EventPromoFragment extends ListFragment {
 	ArrayList<Photos> postersFrmDb;
 	HottDatabaseHandler db;
 	private static int photoId;
+	
+	
+	public EventPromoFragment() {
+		
+	}
+
 	public EventPromoFragment(int photoId) {
 		super();
 		this.photoId = photoId;

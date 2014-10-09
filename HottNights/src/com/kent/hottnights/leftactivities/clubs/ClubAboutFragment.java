@@ -19,6 +19,12 @@ public class ClubAboutFragment extends Fragment {
 	static String aboutTextInfo;
 	static String aboutPic;
 	ImageView clubImg;
+	
+	
+
+	public ClubAboutFragment() {
+		super();
+	}
 
 	public ClubAboutFragment(String aboutTextInfo, String aboutPic) {
 		super();
