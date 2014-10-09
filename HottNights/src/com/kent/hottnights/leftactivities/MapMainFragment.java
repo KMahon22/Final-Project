@@ -167,6 +167,8 @@ public class MapMainFragment extends Fragment {
 				}
 			}
 		});
+		
+		view.setBackgroundResource(R.drawable.mpasmall1);
 	}
 
 	public void OnMapInitialized() {
@@ -183,7 +185,7 @@ public class MapMainFragment extends Fragment {
 		googleMap.setMyLocationEnabled(true);
 
 		// Enable / Disable zooming controls
-		googleMap.getUiSettings().setZoomControlsEnabled(false);
+		googleMap.getUiSettings().setZoomControlsEnabled(true);
 
 		// Enable / Disable my location button
 		googleMap.getUiSettings().setMyLocationButtonEnabled(true);

@@ -20,25 +20,29 @@
 
         <TextView
             android:id="@+id/tvClubReviewListName"
+            style="@style/Titles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="name goes here"
-            android:textSize="15dp" />
+             />
 
         <TextView
             android:id="@+id/tvClubReviewListDescr"
+            style="@style/Items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="descr"
-            android:textSize="10dp" />
+            />
 
          <RatingBar
             android:id="@+id/ratingBar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
-            android:rating="3.0"
-            android:stepSize="1.0" 
+           android:clickable="false"
+            android:stepSize="0.1" 
+            android:progressDrawable="@drawable/bluestars"
+            android:isIndicator="true"
             /> 
         	
     </LinearLayout>

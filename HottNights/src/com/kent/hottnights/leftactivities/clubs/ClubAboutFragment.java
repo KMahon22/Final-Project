@@ -65,6 +65,7 @@ public class ClubAboutFragment extends Fragment {
 		super.onViewCreated(view, savedInstanceState);
 		// aboutText = (TextView) view.findViewById(R.id.tvClubAbout);
 		// aboutText.setText(aboutTextInfo);
+		view.setBackgroundResource(R.drawable.clback1);
 	}
 
 }

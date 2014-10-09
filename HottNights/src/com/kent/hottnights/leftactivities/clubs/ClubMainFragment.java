@@ -1,5 +1,6 @@
 package com.kent.hottnights.leftactivities.clubs;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -63,6 +64,9 @@ public class ClubMainFragment extends Fragment {
 						.getDisplayMetrics());
 		pager.setPageMargin(pageMargin);
 		tabs.setViewPager(pager);
+		tabs.setTextColor(Color.parseColor("#0000E6"));
+		//tabs.setTabBackground(Color.CYAN);
+		tabs.setBackgroundColor(Color.BLACK);
 	}
 
 	private void setUpViews() {

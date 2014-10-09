@@ -14,7 +14,7 @@
 
      <fragment 
         android:id="@+id/login_fragment"
-        android:name="com.kent.hottnights.SplashScreen"
+        android:name="com.kent.hottnights.FacebookLogin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 

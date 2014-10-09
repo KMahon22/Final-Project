@@ -3,6 +3,7 @@ package com.kent.hottnights.adapters;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,7 @@ public class ShareAdapter extends BaseAdapter {
 					.findViewById(R.id.tvShareListName);
 			holder.shareDescr = (TextView) convertView
 					.findViewById(R.id.tvShareListDescr);
+			holder.checker = (ImageView) convertView.findViewById(R.id.ivClickCheck);
 		//	holder.shareCheck = (CheckBox) convertView
 			//		.findViewById(R.id.cbShareList);
 
@@ -73,6 +75,16 @@ public class ShareAdapter extends BaseAdapter {
 			holder.shareImg.setImageResource(which.getShareLimg());
 			holder.shareName.setText(which.getShareLname());
 			holder.shareDescr.setText(which.getShareDescr());
+			holder.checker.setImageResource(R.drawable.icon_profile);
+			
+			/*if ( listShare.contains(position))
+			{
+				convertView.setBackgroundColor(Color.parseColor("#FFFFF"));
+			}else
+			{
+				convertView.setBackgroundColor(Color.parseColor("#FF0000"));
+			}
+			*/
 			//holder.shareCheck.setChecked(isitreally);
 
 			convertView.setTag(holder);
@@ -87,6 +99,7 @@ public class ShareAdapter extends BaseAdapter {
 		TextView shareName;
 		TextView shareDescr;
 		//CheckBox shareCheck;
+		ImageView checker;
 	}
 
 }

@@ -42,7 +42,7 @@ public class ClubListFragment extends ListFragment {
 	ClubListComm clcomm;
 
 	public int[] flags = new int[] { R.drawable.ic_launcher,
-			R.drawable.calendar, R.drawable.ic_launcher,
+			R.drawable.ic_launcher, R.drawable.ic_launcher,
 			R.drawable.ic_launcher, R.drawable.ic_launcher };
 
 	public static ClubListFragment listFraggg() {
@@ -126,6 +126,7 @@ public class ClubListFragment extends ListFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
+		view.setBackgroundResource(R.drawable.clback1);
 		//setUpViews(view);
 		
 	}

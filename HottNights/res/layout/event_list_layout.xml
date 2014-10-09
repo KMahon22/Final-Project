@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" 
+    android:padding="2dp">
 
     <ImageView
         android:id="@+id/ivEventListImg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
+        android:layout_width="75dp"
+        android:layout_height="88dp"
+        
         android:src="@drawable/ic_launcher" />
 
     <LinearLayout
@@ -20,17 +19,18 @@
 
         <TextView
             android:id="@+id/tvEventListName"
+            style="@style/EventListNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
             android:text="name goes here" />
+        <!-- android:textSize="15dp" -->
 
         <TextView
             android:id="@+id/tvEventListDescr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:text="descr" />
+            style="@style/EventListDescrLabel"
+            
+            android:text="descr"
+            />
     </LinearLayout>
 
 </LinearLayout>

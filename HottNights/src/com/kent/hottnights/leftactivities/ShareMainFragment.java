@@ -2,15 +2,16 @@ package com.kent.hottnights.leftactivities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.kent.hottnights.FacebookLogin;
 import com.kent.hottnights.MainMenuActivity;
 import com.kent.hottnights.R;
-import com.kent.hottnights.SplashScreen;
 import com.special.ResideMenu.ResideMenu;
 
 public class ShareMainFragment extends Fragment{
@@ -20,7 +21,7 @@ public class ShareMainFragment extends Fragment{
 	private ResideMenu resideMenu;
 	public Button shareButton;
 	private int toker;
-	SplashScreen blue;
+	FacebookLogin blue;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,11 +29,17 @@ public class ShareMainFragment extends Fragment{
 		// TODO Auto-generated method stub
 		//return super.onCreateView(inflater, container, savedInstanceState);
 		
-		parentView = inflater.inflate(R.layout.media_fragment, container, false);
-		
-		
-		
-	
+		try {
+			parentView = inflater.inflate(R.layout.media_fragment, container, false);
+			
+			parentView.setBackgroundResource(R.drawable.sharsmall1);
+			
+
+			return parentView;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return parentView;
 	}
 	/*
@@ -83,5 +90,16 @@ public class ShareMainFragment extends Fragment{
 	FrameLayout ignored_view = (FrameLayout) parentView.findViewById(R.id.ignored_view);
 	resideMenu.addIgnoredView(ignored_view);
 	}
-	
+	 @Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		
+		   
+		    Fragment fragment = (getFragmentManager().findFragmentById(R.id.share_main_fragment));  
+		    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+		    ft.remove(fragment);
+		    ft.commit();
+		
+	}
 }

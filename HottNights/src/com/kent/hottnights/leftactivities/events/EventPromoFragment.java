@@ -46,16 +46,16 @@ public class EventPromoFragment extends ListFragment {
 		EventPosters boom3 = new EventPosters(postersFrmDb.get(0).getPhoto3());
 		EventPosters boom4 = new EventPosters(postersFrmDb.get(0).getPhoto4());
 		EventPosters boom5 = new EventPosters(postersFrmDb.get(0).getPhoto5());
-		EventPosters boom6 = new EventPosters(postersFrmDb.get(0).getPhoto6());
-		EventPosters boom7 = new EventPosters(postersFrmDb.get(0).getPhoto7());
+	//	EventPosters boom6 = new EventPosters(postersFrmDb.get(0).getPhoto6());
+		//EventPosters boom7 = new EventPosters(postersFrmDb.get(0).getPhoto7());
 		
 		postersList.add(boom1);
 		postersList.add(boom2);
 		postersList.add(boom3);
 		postersList.add(boom4);
 		postersList.add(boom5);
-		postersList.add(boom6);
-		postersList.add(boom7);
+	//	postersList.add(boom6);
+		//postersList.add(boom7);
 		
 		EventPhotoAdapter adapter = new EventPhotoAdapter(getActivity().getBaseContext(), postersList);
 		setListAdapter(adapter);

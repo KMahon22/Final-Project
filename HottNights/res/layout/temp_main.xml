@@ -9,7 +9,7 @@
           android:id="@+id/selectionFragment"
           android:layout_width="match_parent"
           android:layout_height="match_parent" />
-    <fragment android:name="com.kent.hottnights.SplashScreen"
+    <fragment android:name="com.kent.hottnights.FacebookLogin"
           android:id="@+id/splashFragment"
           android:layout_width="match_parent"
           android:layout_height="match_parent" />

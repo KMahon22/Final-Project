@@ -13,9 +13,9 @@
          />
      <fragment
          android:id="@+id/share_main_fragment_fb"
-        android:name="com.kent.hottnights.SplashScreen"
+        android:name="com.kent.hottnights.FacebookLogin"
         android:layout_width="fill_parent"
-        android:layout_height="400dp" />
+        android:layout_height="300dp" />
      
      </LinearLayout>
 

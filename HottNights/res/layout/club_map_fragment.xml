@@ -14,10 +14,26 @@
         android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/btnWalk"
+            android:id="@+id/btnClubWalk"
+            style="@style/ClubMapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Walk" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:text="@string/walk" />
+
+        <Button
+            android:id="@+id/btnClubDrive"
+            style="@style/ClubMapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnClubWalk"
+            android:layout_alignBottom="@+id/btnClubWalk"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="45dp"
+            android:text="@string/drive" />
+
     </RelativeLayout>
 
 </LinearLayout>

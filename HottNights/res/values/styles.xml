@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -15,6 +15,131 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#CCCCCC</color>
+
+    <style name="FeatureLabels">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">18.5sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="FeatureTitles">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">18.5sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="FeatureDressLabels">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="FeatureItems">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="FeatureDrinkItems">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="Titles">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">18.5sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="Items">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+
+    <style name="EventListNameLabel">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <style name="EventListDescrLabel">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">14.5sp</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AboutStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle"></item>
+        <item name="android:textSize">15.5sp</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="EventMapButton">
+        <item name="android:background">@drawable/eventmapbutton</item>
+        <item name="android:shadowColor">#B03021</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:textColor">#B0B0B0</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ClubMapButton">
+        <item name="android:background">@drawable/clubmapbutton</item>
+        <item name="android:shadowColor">#B03021</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:textColor">#B0B0B0</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    
+    <style name="MapButton">
+        <item name="android:background">@drawable/mainmapbutton</item>
+        <item name="android:shadowColor">#B03021</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:textColor">#B0B0B0</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+      <style name="ShareButton">
+        <item name="android:background">@drawable/sharebutton</item>
+        <item name="android:shadowColor">#B03021</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:textColor">#B0B0B0</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="EventContactItems">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">1dp</item>
     </style>
 
 </resources>

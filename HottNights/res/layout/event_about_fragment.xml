@@ -17,6 +17,7 @@
 
         <TextView
             android:id="@+id/tvEventAbout"
+            style="@style/AboutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/clubabout" />

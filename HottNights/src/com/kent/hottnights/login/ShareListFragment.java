@@ -2,6 +2,7 @@ package com.kent.hottnights.login;
 
 import java.util.ArrayList;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
@@ -12,8 +13,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.kent.hottnights.R;
-import com.kent.hottnights.adapters.ShareAdapter;
+import com.kent.hottnights.adapters.EventListAdapter;
 import com.kent.hottnights.communicators.HotComm;
+import com.kent.hottnights.database.HottDatabaseHandler;
+import com.kent.hottnights.objects.Event;
 import com.kent.hottnights.objects.ShareListObjs;
 
 public class ShareListFragment extends ListFragment {
@@ -24,11 +27,14 @@ public class ShareListFragment extends ListFragment {
 	private int[] cil;
 	private String[] rbCheck;
 	
-	ArrayList<ShareListObjs> arrayShare;
-	
+	//ArrayList<ShareListObjs> arrayShare;
+	ArrayList<Event> arrayShare;
+	ArrayList<Event> eventFrmDb;
 	ImageView change;
-	
+	private static View rootView;
 	HotComm com;
+	
+	HottDatabaseHandler db;
 	
 	public static ShareListFragment shareFrag()
 	{
@@ -41,25 +47,29 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		Bundle savedInstanceState) {
 	// TODO Auto-generated method stub
 	
-	arrayShare = new ArrayList<ShareListObjs>();
+//	arrayShare = new ArrayList<ShareListObjs>();
+	arrayShare = new ArrayList<Event>();
+	db = new HottDatabaseHandler(getActivity().getBaseContext());
 	
+	eventFrmDb = db.getEvents();
 	cname = getResources().getStringArray(R.array.cnames);
 	cdescr = getResources().getStringArray(R.array.cdescr);
 	cil = getResources().getIntArray(R.array.cimgs);
 	rbCheck = getResources().getStringArray(R.array.radioButton);
 	
-	for(int s = 0; s < 5; s++)
+	for(int s = 0; s < eventFrmDb.size(); s++)
 	{
 		boolean toss = Boolean.parseBoolean(rbCheck[s]);
 		ShareListObjs black = new ShareListObjs(cil[s], cname[s], cdescr[s], toss);
+		Event purple = new Event(eventFrmDb.get(s).getEventName(), eventFrmDb.get(s).getEventPic(), eventFrmDb.get(s).getEventDescr());
 		
-		
-		arrayShare.add(black);
+	//	arrayShare.add(black);
+		arrayShare.add(purple);
 		
 	}
 	//arrayShare.get(1).isShareIcheck();
 	
-	ShareAdapter adapter = new ShareAdapter(getActivity().getBaseContext(), arrayShare);
+	EventListAdapter adapter = new EventListAdapter(getActivity().getBaseContext(), arrayShare);
 	
 	setListAdapter(adapter);
 	
@@ -67,6 +77,8 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	
 	return super.onCreateView(inflater, container, savedInstanceState);
 }
+
+View selectedView = null;
 
 @Override
 public void onListItemClick(ListView l, View v, int position, long id) {
@@ -77,7 +89,22 @@ public void onListItemClick(ListView l, View v, int position, long id) {
 	//shareFrag();
 	//change.setImageResource(R.drawable.icon_home)
 	//arrayShare.get(1).getShareLname();
-	com.eventInfo(arrayShare.get(position).getShareLname());
+	
+	
+	
+		if(selectedView != null)
+		{
+			selectedView.setBackgroundColor(Color.TRANSPARENT);
+		}
+		Log.d("test",selectedView + "");
+		selectedView = v;
+		Log.d("test",selectedView + "");
+		v.setBackgroundColor(Color.parseColor("#A74F14"));
+	
+	
+	
+	com.eventInfo(arrayShare.get(position).getEventName(), arrayShare.get(position).getEventDescr(), arrayShare.get(position).getEventAbout(), arrayShare.get(position).getEventPic(),arrayShare.get(position).getEventPic());
+	
 	
 	
 	Log.i("OLICINEVENT", "why dont i click :(");

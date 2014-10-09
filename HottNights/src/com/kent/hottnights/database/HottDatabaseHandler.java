@@ -25,7 +25,7 @@ import com.kent.hottnights.objects.Photos;
 
 public class HottDatabaseHandler extends SQLiteOpenHelper {
 
-	private static final int DB_VERSION = 10;
+	private static final int DB_VERSION = 15;
 	private static final String DB_NAME = "hottnights";
 
 	// CLUBTABLE NAME AND FIELDNAMES
@@ -220,7 +220,7 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 		String CREATE_PHOTOS_TABLE = "CREATE TABLE " + TABLE_PHOTOS + "("
 				+ PHOTOS_ID + " INTEGER PRIMARY KEY," + PHOTO1 + " TEXT,"
 				+ PHOTO2 + " TEXT," + PHOTO3 + " TEXT," + PHOTO4 + " TEXT,"
-				+ PHOTO5 + " TEXT," + PHOTO6 + " TEXT," + PHOTO7 + " TEXT"
+				+ PHOTO5 + " TEXT"// + PHOTO6 + " TEXT," + PHOTO7 + " TEXT"
 				+ ")";
 		db.execSQL(CREATE_PHOTOS_TABLE);
 
@@ -350,9 +350,9 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 				+ " 'http://1.bp.blogspot.com/-_hKFc0x-h-A/UPQ7FiGdA9I/AAAAAAAAA-8/K2VGZSxgGF0/s1600/76593_451693141540338_203048964_n.jpg',"
 				+ " 'http://2.bp.blogspot.com/-NIayBGxkONU/UPQ7FKM_1MI/AAAAAAAAA-0/5RTpqIRxnL4/s1600/533054_394896027220050_1609823675_n.jpg',"
 				+ " 'http://www.igrealty.com/wp-content/uploads/2014/08/suga.jpg',"
-				+ " 'http://newswire.net/public/article/e0/25/25bb_ac8f.jpg',"
+		//		+ " 'http://newswire.net/public/article/e0/25/25bb_ac8f.jpg',"
 				+ " 'http://www.gtrnissan.com/images/img_01.jpg',"
-				+ " 'http://cheapedge.com/wp-content/uploads/2014/04/8820920-nissan-gtr-sport-hd-wallpaper.jpg',"
+			//	+ " 'http://cheapedge.com/wp-content/uploads/2014/04/8820920-nissan-gtr-sport-hd-wallpaper.jpg',"
 				+ " 'http://ahdcarwallpaper.com/wp-content/uploads/2014/03/nissan-gtr-wallpaper-1366x768-8.jpg')");
 
 		db.execSQL("INSERT INTO "
@@ -360,9 +360,9 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 				+ " Values(2,"
 				+ " 'http://www.blogcdn.com/slideshows/images/slides/157/696/5/S1576965/slug/l/008-2015-nissan-gtr-nismo-1.jpg',"
 				+ " 'http://2.bp.blogspot.com/-NIayBGxkONU/UPQ7FKM_1MI/AAAAAAAAA-0/5RTpqIRxnL4/s1600/533054_394896027220050_1609823675_n.jpg',"
-				+ " 'http://www.igrealty.com/wp-content/uploads/2014/08/suga.jpg',"
+			//	+ " 'http://www.igrealty.com/wp-content/uploads/2014/08/suga.jpg',"
 				+ " 'http://newswire.net/public/article/e0/25/25bb_ac8f.jpg',"
-				+ " 'http://www.gtrnissan.com/images/img_01.jpg',"
+				//+ " 'http://www.gtrnissan.com/images/img_01.jpg',"
 				+ " 'http://cheapedge.com/wp-content/uploads/2014/04/8820920-nissan-gtr-sport-hd-wallpaper.jpg',"
 				+ " 'http://ahdcarwallpaper.com/wp-content/uploads/2014/03/nissan-gtr-wallpaper-1366x768-8.jpg')");
 
@@ -371,9 +371,9 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 				+ " Values(3,"
 				+ " 'http://cdn.wallstcheatsheet.com/wp-content/uploads/2014/06/2014-Nissan-GTR.png',"
 				+ " 'http://2.bp.blogspot.com/-NIayBGxkONU/UPQ7FKM_1MI/AAAAAAAAA-0/5RTpqIRxnL4/s1600/533054_394896027220050_1609823675_n.jpg',"
-				+ " 'http://www.igrealty.com/wp-content/uploads/2014/08/suga.jpg',"
+				//+ " 'http://www.igrealty.com/wp-content/uploads/2014/08/suga.jpg',"
 				+ " 'http://newswire.net/public/article/e0/25/25bb_ac8f.jpg',"
-				+ " 'http://www.gtrnissan.com/images/img_01.jpg',"
+			//	+ " 'http://www.gtrnissan.com/images/img_01.jpg',"
 				+ " 'http://cheapedge.com/wp-content/uploads/2014/04/8820920-nissan-gtr-sport-hd-wallpaper.jpg',"
 				+ " 'http://ahdcarwallpaper.com/wp-content/uploads/2014/03/nissan-gtr-wallpaper-1366x768-8.jpg')");
 
@@ -409,8 +409,8 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 		db.execSQL("INSERT INTO "
 				+ TABLE_EVENT
 				+ " Values(1,"
-				+ " 'Gillette',"
-				+ " 'http://ahdcarwallpaper.com/wp-content/uploads/2014/03/nissan-gtr-wallpaper-1366x768-8.jpg',"
+				+ " 'Gillette'," //http://ahdcarwallpaper.com/wp-content/uploads/2014/03/nissan-gtr-wallpaper-1366x768-8.jpg |
+				+ " 'https://cornerbalance.files.wordpress.com/2010/07/sa55m_car01.jpg',"
 				+ " 'This is the short description GILLETTEEEEEE that is used when displaying the list of events',"
 				+ " 'This goes right under the the picture in the about section to blach ah cbakcblacbefkjfjebkabekjfbefbekjfbe',"
 				+ " 51.507," + " -0.0203," + " 1," + " 1," + " 1," + " 1)"
@@ -768,8 +768,8 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 					ph.setPhoto3(cursor.getString(3));
 					ph.setPhoto4(cursor.getString(4));
 					ph.setPhoto5(cursor.getString(5));
-					ph.setPhoto6(cursor.getString(6));
-					ph.setPhoto7(cursor.getString(7));
+					//ph.setPhoto6(cursor.getString(6));
+					//ph.setPhoto7(cursor.getString(7));
 					photoList.add(ph);
 				} while (cursor.moveToNext());
 

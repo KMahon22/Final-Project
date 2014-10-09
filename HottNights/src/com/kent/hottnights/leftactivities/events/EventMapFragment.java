@@ -1,25 +1,30 @@
 package com.kent.hottnights.leftactivities.events;
 
 import android.app.Activity;
+import android.location.Criteria;
+import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnLayoutChangeListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kent.hottnights.MainMenuActivity;
 import com.kent.hottnights.R;
+import com.tyczj.mapnavigator.Navigator;
 
 public class EventMapFragment extends Fragment {
 
@@ -29,6 +34,12 @@ public class EventMapFragment extends Fragment {
 
 	private static float eLat;
 	private static float eLong;
+	
+	//LocationManager locationManager;
+	String provider;
+	Button drive;
+	Button walk;
+	
 
 	public EventMapFragment(float eLat, float eLong) {
 		super();
@@ -37,7 +48,7 @@ public class EventMapFragment extends Fragment {
 	}
 
 	LocationManager locationManager;
-
+	Navigator nav;
 	GoogleMap googleMap;
 
 	public static EventMapFragment mappyFrag() {
@@ -58,8 +69,51 @@ public class EventMapFragment extends Fragment {
 				.beginTransaction();
 		fragmenttransaction.add(R.id.mapEvent, mapFragment);
 		fragmenttransaction.commit();
+		
+		drive = (Button) mView.findViewById(R.id.btnDrive);
+		walk = (Button) mView.findViewById(R.id.btnWalk);
+	 locationManager = (LocationManager) getActivity().getSystemService(Activity.LOCATION_SERVICE);
+
+		  // Creating a criteria object to retrieve provider
+		  Criteria criteria = new Criteria();
+
+		  // Getting the name of the best provider
+		  provider = locationManager.getBestProvider(criteria, true);
+		
+		
+		drive.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				findPath(0);
+			}
+		});
+		
+		walk.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				findPath(3);
+				
+				
+			}
+		});
+		
+		mView.setBackgroundResource(R.drawable.evasmall1);
 
 		return mView;
+	}
+	
+	public void findPath(int mode)
+	{
+		if(nav != null )
+			nav.removePath();
+		
+		Location l = locationManager.getLastKnownLocation(provider);
+		LatLng yourlocation = new LatLng(l.getLatitude(), l.getLongitude());
+		nav = new Navigator(googleMap, yourlocation, evLatLng());
+		nav.setMode(mode, 0, -1);
+		nav.findDirections(false);
 	}
 
 	@Override
@@ -82,7 +136,21 @@ public class EventMapFragment extends Fragment {
 			}
 		});
 	}
+	
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		googleMap = null;
+	}
 
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		OnMapInitialized();
+	}
+	
 	@Override
 	public void onViewStateRestored(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -104,7 +172,7 @@ public class EventMapFragment extends Fragment {
 		googleMap.setMyLocationEnabled(true);
 
 		// Enable / Disable zooming controls
-		googleMap.getUiSettings().setZoomControlsEnabled(false);
+		googleMap.getUiSettings().setZoomControlsEnabled(true);
 
 		// Enable / Disable my location button
 		googleMap.getUiSettings().setMyLocationButtonEnabled(true);
@@ -152,6 +220,7 @@ public class EventMapFragment extends Fragment {
 				return v;
 			}
 		});
+		
 		MarkerOptions mo = new MarkerOptions();
 
 		mo.position(evLatLng());

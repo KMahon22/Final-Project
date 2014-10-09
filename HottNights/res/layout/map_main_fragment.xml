@@ -15,36 +15,50 @@
         android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/btnMapEvents"
+            android:id="@+id/btnMapClubs"
+            style="@style/MapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnMapEvents"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:paddingLeft="42dp"
+            android:paddingRight="42dp"
+            android:text="Clubs" />
+
+        <Button
+            android:id="@+id/btnMapStations"
+            style="@style/MapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnMapClubs"
+            android:layout_alignBottom="@+id/btnMapClubs"
+            android:layout_alignParentRight="true"
+            android:text="GasStations" />
+
+        <Button
+            android:id="@+id/btnMapFood"
+            style="@style/MapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="38dp"
+            android:paddingRight="38dp"
+            android:text="Food" />
+
+        <Button
+            android:id="@+id/btnMapEvents"
+            style="@style/MapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnMapFood"
+            android:layout_alignBottom="@+id/btnMapFood"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="38dp"
+            android:paddingRight="38dp"
             android:text="Events" />
-
-         <Button
-             android:id="@+id/btnMapFood"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignParentRight="true"
-             android:layout_alignParentTop="true"
-             android:layout_marginRight="46dp"
-             android:text="Food" />
-
-          <Button
-              android:id="@+id/btnMapClubs"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentLeft="true"
-              android:text="Clubs" />
-
-             <Button
-                 android:id="@+id/btnMapStations"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_alignParentBottom="true"
-                 android:layout_alignParentRight="true"
-                 android:layout_marginRight="48dp"
-                 android:text="GasStations" />
 
     </RelativeLayout>
 

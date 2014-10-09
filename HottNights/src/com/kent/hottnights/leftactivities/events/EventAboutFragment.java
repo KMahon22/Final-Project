@@ -1,5 +1,6 @@
 package com.kent.hottnights.leftactivities.events;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -52,8 +53,17 @@ public class EventAboutFragment extends Fragment {
         .fit() //
         .into(ivAbPic);
 		
-		
+		eAboutView.setBackgroundResource(R.drawable.evasmall1);
+		//eAboutView.setBackgroundResource(new BitmapDrawable(getActivity().getBaseContext().getResources(), "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTZuJHccuSxdxx4kAOVoGyt-5niG3mC6SdDGKe79ifGFNzkTCkizQ"));;
+		//eAboutView.setBackgroundDrawable(new BitmapDrawable(getActivity().getBaseContext().getResources(), "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTZuJHccuSxdxx4kAOVoGyt-5niG3mC6SdDGKe79ifGFNzkTCkizQ"));
 		return eAboutView;
 	
+	}
+	
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onViewCreated(view, savedInstanceState);
+		view.setBackgroundResource(R.drawable.evasmall1);
 	}
 }

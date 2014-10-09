@@ -21,17 +21,20 @@
 
         <TextView
             android:id="@+id/tvClubListName"
+            style="@style/EventListNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="name goes here"
-            android:textSize="15dp" />
-
+            />
+<!--  android:textSize="15dp" -->
         <TextView
             android:id="@+id/tvClubListDescr"
+            style="@style/EventListDescrLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="descr"
-            android:textSize="10dp" />
+             />
+        <!-- android:textSize="10dp" -->
     </LinearLayout>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.kent.hottnights.leftactivities.events;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -55,6 +56,9 @@ public class EventMainFragment extends Fragment {
 		final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
 		pager.setPageMargin(pageMargin);
 		tabs.setViewPager(pager);
+		tabs.setTextColor(Color.parseColor("#CC0000"));
+		//tabs.setTabBackground(Color.CYAN);
+		tabs.setBackgroundColor(Color.BLACK);
 	}
 	
 	private void SetUpViews() {

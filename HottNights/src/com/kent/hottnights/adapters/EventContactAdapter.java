@@ -75,6 +75,7 @@ public class EventContactAdapter extends BaseAdapter {
 			holder.ecEmail.setText(how.getEcEmail());
 			holder.ecFbk.setText(how.getEcFbk());
 			holder.ecTwitter.setText(how.getEcTwitter());
+			//textview.setText(Html.fromHtml(aString), TextView.BufferType.SPANNABLE);
 			
 			convertView.setTag(holder);
 		}else

@@ -120,5 +120,10 @@ public class ClubFeaturesFragment extends Fragment {
 		
 		return aboutview;
 	}
-
+@Override
+public void onViewCreated(View view, Bundle savedInstanceState) {
+	// TODO Auto-generated method stub
+	super.onViewCreated(view, savedInstanceState);
+	view.setBackgroundResource(R.drawable.clback1);
+}
 }

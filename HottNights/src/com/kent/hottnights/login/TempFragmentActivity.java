@@ -12,24 +12,24 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Base64;
 import android.util.Log;
 
-import com.kent.hottnights.SplashScreen;
+import com.kent.hottnights.FacebookLogin;
 
 public class TempFragmentActivity extends FragmentActivity {
-	SplashScreen mainFragment;
+	FacebookLogin mainFragment;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 
 	    if (savedInstanceState == null) {
 	        // Add the fragment on initial activity setup
-	        mainFragment = new SplashScreen();
+	        mainFragment = new FacebookLogin();
 	        getSupportFragmentManager()
 	        .beginTransaction()
 	        .add(android.R.id.content, mainFragment)
 	        .commit();
 	    } else {
 	        // Or set the fragment from restored state info
-	        mainFragment = (SplashScreen) getSupportFragmentManager()
+	        mainFragment = (FacebookLogin) getSupportFragmentManager()
 	        .findFragmentById(android.R.id.content);
 	    }
 	    

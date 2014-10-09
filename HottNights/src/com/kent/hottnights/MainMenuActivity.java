@@ -1,3 +1,14 @@
+/**
+ * Activity for loading layout resources
+ * 
+ * This activity is used to display different layout resources for a tutorial on user interface design.
+ * 
+ * @author Kent Mahon
+ * @version 2014.1009
+ * @since 1.0
+ */
+
+
 package com.kent.hottnights;
 
 //import android.R;
@@ -16,6 +27,7 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -43,6 +55,7 @@ import com.kent.hottnights.leftactivities.ShareMainFragment;
 import com.kent.hottnights.leftactivities.clubs.ClubAboutFragment;
 import com.kent.hottnights.leftactivities.clubs.ClubContactFragment;
 import com.kent.hottnights.leftactivities.clubs.ClubFeaturesFragment;
+import com.kent.hottnights.leftactivities.clubs.ClubMapFragment;
 import com.kent.hottnights.leftactivities.clubs.ClubPhotoFragment;
 import com.kent.hottnights.leftactivities.clubs.ClubReviewFragment;
 import com.kent.hottnights.leftactivities.events.EventAboutFragment;
@@ -105,6 +118,16 @@ public class MainMenuActivity extends FragmentActivity implements
 	WebServiceURLS wsu;
 	public String getDressUrl; 
 	public String updatesyncs;
+	
+	
+	/**
+	 * onCreate(Bundle arg0) is called when activity is first started.
+	 * Resize menu is set up in here
+	 * The variables used to store the web addresses are intialised here
+	 * This is also where the timing for the call to the broadcast receiver is set
+	 */
+	
+	
 	@Override
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
@@ -115,9 +138,10 @@ public class MainMenuActivity extends FragmentActivity implements
 		token = 0;
 		setUpMenu();
 		Log.i("Oncreate", "is this called");
-		changeFragment(new EventListFragment());
-
 		fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction().add(R.id.main_fragment, new EventListFragment()).commit();
+		//changeFragment(new EventListFragment());
+
 
 		prgDialog = new ProgressDialog(this);
 		prgDialog
@@ -131,7 +155,7 @@ public class MainMenuActivity extends FragmentActivity implements
 		AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
 		// Alarm Manager calls BroadCast for every Ten seconds (10 * 1000), BroadCase further calls service to check if new records are inserted in 
 		// Remote MySQL DB
-		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, Calendar.getInstance().getTimeInMillis() + 5000, 10 * 1000, pendingIntent);
+		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, Calendar.getInstance().getTimeInMillis() + 5000, 1000 * 1000, pendingIntent);
 
 		
 		wsu = new WebServiceURLS();
@@ -140,6 +164,11 @@ public class MainMenuActivity extends FragmentActivity implements
 		Log.i("WSURL", updatesyncs);
 	}
 
+	/**
+	 * setUpMenu()
+	 * This function is contains the information for the set up of the Resize menu
+	 * used for navigation through out the app
+	 */
 	private void setUpMenu() {
 		// TODO Auto-generated method stub
 		resideMenu = new ResideMenu(this);
@@ -201,24 +230,42 @@ public class MainMenuActivity extends FragmentActivity implements
 
 	}
 
+	/**
+	 * onClick(View view)
+	 * This is used to switch views throughout the app and to set 
+	 * up the different themes. 
+	 * 
+	 */
 	@Override
 	public void onClick(View view) {
 		if (view == itemEvents) {
 			changeFragment(new EventListFragment());
 			header.setText("Events");
+			header.setTextColor(Color.RED);
+			header.setBackgroundColor(Color.BLACK);
+			resideMenu.setBackground(R.drawable.evenback1); //triallll
 
 		} else if (view == itemClubs) {
 			changeFragment(new ClubListFragment());
 			header.setText("Clubs");
+			header.setTextColor(Color.parseColor("#0000E6"));
+			header.setBackgroundColor(Color.BLACK);
+			resideMenu.setBackground(R.drawable.turntables);
 		} else if (view == itemCalendar) {
 			changeFragment(new CalendarMainFragment());
 			header.setText("Calendar");
 		} else if (view == itemMap) {
 			changeFragment(new MapMainFragment());
 			header.setText("Map");
+			header.setTextColor(Color.parseColor("#006600"));
+			header.setBackgroundColor(Color.BLACK);
+			resideMenu.setBackground(R.drawable.mapback1);
 		} else if (view == itemShare) {
 			changeFragment(new ShareMainFragment());
 			header.setText("Share");
+			header.setTextColor(Color.parseColor("#CC5200"));
+			header.setBackgroundColor(Color.BLACK);
+			resideMenu.setBackground(R.drawable.shareback1);
 		} else if (view == itemMedia) {
 			//changeFragment(new SplashScreen());
 			syncSQLiteMySQLDB();
@@ -259,19 +306,35 @@ public class MainMenuActivity extends FragmentActivity implements
 
 	}
 
+	/**
+	 * This function is an interface for communication between fragments
+	 * 
+	 * @param a The title of the event being sent from the event list fragment to the facebook login fragment
+	 * @param b The description of the event being sent from the event list fragment to the facebook login fragment
+	 * @param c The caption of the event being sent from the event list fragment to the facebook login fragment
+	 * @param d The link of the event being sent from the event list fragment to the facebook login fragment
+	 * @param e The picture of the event being sent from the event list fragment to the facebook login fragment
+	 * 
+	 */
 	// /HottComm interface method
-	public void eventInfo(String a) {
+	public void eventInfo(String a, String b, String c, String d, String e) {
 		// TODO Auto-generated method stub
 		// String apple = a;
 		// String pear = b;
 		// String grape = c;
-		String title = a;
+		//String title = a;
 
-		SplashScreen s2 = (SplashScreen) fragmentManager
+		FacebookLogin s2 = (FacebookLogin) fragmentManager
 				.findFragmentById(R.id.share_main_fragment_fb);
-		s2.infoToAccept(title);
+		s2.infoToAccept(a, b, c, d, e);
 
 	}
+	
+	/**
+	 * This method is the interface used to communication information from 
+	 * the club list fragment to the other realted fragments
+	 * 
+	 */
 
 	// //ClubListComm interface method
 	@Override
@@ -300,9 +363,16 @@ public class MainMenuActivity extends FragmentActivity implements
 		ClubPhotoFragment cpf = new ClubPhotoFragment(clcPhotoId);
 		ClubFeaturesFragment cfc = new ClubFeaturesFragment(clcFeatureId,
 				clcDrinksId, clcDressId);
+		ClubMapFragment cmf = new ClubMapFragment(clcClubLat, clcClubLong);
 		ClubContactFragment ccf = new ClubContactFragment(clcContactId);
 
 	}
+	
+	/**
+	 * This method is the interface used to communication information from 
+	 * the event list fragment to the other realted fragments
+	 * 
+	 */
 
 	// EVENT LIST INTERFACE
 	@Override

@@ -110,7 +110,7 @@ public class EventFeaturesFragment extends Fragment{
 				dPants.setText(dressFrmDb.get(0).getDress_pants());
 				dShoes.setText(dressFrmDb.get(0).getDress_shoes());
 				
-		
+		eFeatView.setBackgroundResource(R.drawable.evasmall1);
 		
 		return eFeatView;
 	

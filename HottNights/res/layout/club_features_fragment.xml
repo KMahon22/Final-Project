@@ -15,12 +15,14 @@
 
             <TextView
                 android:id="@+id/tvClAdmTag"
+                style="@style/FeatureLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Admission:" />
+                android:text="@string/admission" />
 
             <TextView
                 android:id="@+id/tvClAdm"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$25.00" />
@@ -32,12 +34,14 @@
 
             <TextView
                 android:id="@+id/tvClDateTag"
+                style="@style/FeatureLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date:" />
+                android:text="@string/date" />
 
             <TextView
                 android:id="@+id/tvClDate"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/09/1992" />
@@ -49,12 +53,14 @@
 
             <TextView
                 android:id="@+id/tvClTimeTag"
+                style="@style/FeatureLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Time:" />
+                android:text="@string/time" />
 
             <TextView
                 android:id="@+id/tvClTime"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12:40am" />
@@ -67,12 +73,14 @@
 
             <TextView
                 android:id="@+id/tvClPromoTag"
+                style="@style/FeatureLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Promotion:" />
+                android:text="@string/promotion" />
 
             <TextView
                 android:id="@+id/tvClPromo"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ladies 2 4 1 before 12" />
@@ -85,9 +93,10 @@
 
             <TextView
                 android:id="@+id/tvClDrinksTag"
+                style="@style/FeatureTitles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DRINKS LIST" />
+                android:text="@string/drinkslist" />
         </TableRow>
 
         <TableRow
@@ -97,11 +106,13 @@
 
             <TextView
                 android:id="@+id/tvClDrinks1"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink1" />
              <TextView
                 android:id="@+id/tvClDrinks2"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink2" />
@@ -113,11 +124,13 @@
 
             <TextView
                 android:id="@+id/tvClDrinks3"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink1" />
              <TextView
                 android:id="@+id/tvClDrinks4"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink2" />
@@ -129,11 +142,13 @@
 
             <TextView
                 android:id="@+id/tvClDrinks5"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink1" />
              <TextView
                 android:id="@+id/tvClDrinks6"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink2" />
@@ -145,6 +160,7 @@
 
             <TextView
                 android:id="@+id/tvClDrinks7"
+                style="@style/FeatureDrinkItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-drink7" />
@@ -156,9 +172,10 @@
 
             <TextView
                 android:id="@+id/tvClDressTag"
+                style="@style/FeatureTitles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dress Code" />
+                android:text="@string/dresscode" />
         </TableRow>
         <TableRow
             android:id="@+id/tableRow9"
@@ -167,12 +184,14 @@
 
             <TextView
                 android:id="@+id/tvClHatsTag"
+                style="@style/FeatureDressLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hats:" />
+                android:text="@string/hats" />
 
             <TextView
                 android:id="@+id/tvClHat"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No" />
@@ -184,12 +203,14 @@
 
             <TextView
                 android:id="@+id/tvClHoodiesTag"
+                style="@style/FeatureDressLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hoodies:" />
+                android:text="@string/hoodies" />
 
             <TextView
                 android:id="@+id/tvClHoodies"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No" />
@@ -201,12 +222,14 @@
 
             <TextView
                 android:id="@+id/tvClShirtsTag"
+                style="@style/FeatureDressLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shirts:" />
+                android:text="@string/shirts" />
 
             <TextView
                 android:id="@+id/tvClShirts"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="T-Shirt/Button Up" />
@@ -218,12 +241,14 @@
 
             <TextView
                 android:id="@+id/tvClPantsTag"
+                style="@style/FeatureDressLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pants:" />
+                android:text="@string/pants" />
 
             <TextView
                 android:id="@+id/tvClPants"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jeans or Slacks" />
@@ -235,12 +260,14 @@
 
             <TextView
                 android:id="@+id/tvClShoesTag"
+                style="@style/FeatureDressLabels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shoes:" />
+                android:text="@string/shoes" />
 
             <TextView
                 android:id="@+id/tvClShoes"
+                style="@style/FeatureItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Trainers or Soft Shoes" />

@@ -139,4 +139,11 @@ public class EventListFragment extends ListFragment {
 				eventsFrmDb.get(position).getPhoto_id());
 		Log.i("OLICINEVENT", "look i clickable");
 	}
+	
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onViewCreated(view, savedInstanceState);
+		view.setBackgroundResource(R.drawable.evasmall1);
+	}
 }

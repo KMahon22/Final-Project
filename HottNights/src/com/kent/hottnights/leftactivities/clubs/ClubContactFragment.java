@@ -74,4 +74,10 @@ public class ClubContactFragment extends Fragment {
 		return contactview;
 	}
 
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onViewCreated(view, savedInstanceState);
+		view.setBackgroundResource(R.drawable.clback1);
+	}
 }
