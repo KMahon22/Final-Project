@@ -196,21 +196,23 @@ public class MainMenuActivity extends FragmentActivity implements
 	private void setUpMenu() {
 		// TODO Auto-generated method stub
 		resideMenu = new ResideMenu(this);
-		resideMenu.setBackground(R.drawable.turntables);
+		//resideMenu.setBackground(R.drawable.turntables);
 		resideMenu.attachToActivity(this);
 		resideMenu.setProfilePic(" ");
 		resideMenu.setProfileName("BackFlip");
+		resideMenu.setBackground(R.drawable.evenback1); //triallll
+		
 
 		// resideMenu.setMenuListener(menuListener);
 		resideMenu.setScaleValue(0.6f);
 
-		itemEvents = new ResideMenuItem(this, R.drawable.ic_launcher, "Events");
-		itemClubs = new ResideMenuItem(this, R.drawable.icon_profile, "Clubs");
+		itemEvents = new ResideMenuItem(this, R.drawable.ic_menu_directions, "Events");
+		itemClubs = new ResideMenuItem(this, R.drawable.ic_menu_cc_am, "Clubs");
 		itemCalendar = new ResideMenuItem(this, R.drawable.calendar2,
 				"Calendar");
-		itemMap = new ResideMenuItem(this, R.drawable.icon_home, "Map");
-		itemMedia = new ResideMenuItem(this, R.drawable.icon_home, "Media");
-		itemShare = new ResideMenuItem(this, R.drawable.ic_launcher, "Share");
+		itemMap = new ResideMenuItem(this, R.drawable.ic_menu_mapmode, "Map");
+		itemMedia = new ResideMenuItem(this, R.drawable.ic_menu_refresh, "Sync");
+		itemShare = new ResideMenuItem(this, R.drawable.ic_menu_allfriends, "Share");
 
 		itemEvents.setOnClickListener(this);
 		itemClubs.setOnClickListener(this);
@@ -221,7 +223,7 @@ public class MainMenuActivity extends FragmentActivity implements
 
 		resideMenu.addMenuItem(itemEvents, ResideMenu.DIRECTION_LEFT);
 		resideMenu.addMenuItem(itemClubs, ResideMenu.DIRECTION_LEFT);
-		resideMenu.addMenuItem(itemCalendar, ResideMenu.DIRECTION_LEFT);
+		//resideMenu.addMenuItem(itemCalendar, ResideMenu.DIRECTION_LEFT);
 		resideMenu.addMenuItem(itemMap, ResideMenu.DIRECTION_LEFT);
 		resideMenu.addMenuItem(itemShare, ResideMenu.DIRECTION_LEFT);
 
@@ -248,6 +250,12 @@ public class MainMenuActivity extends FragmentActivity implements
 
 					}
 				});
+		
+		leftBut.setBackgroundResource(R.drawable.redbutton);
+		rightBut.setBackgroundResource(R.drawable.redbutton);
+		
+		header.setTextColor(Color.RED);
+		header.setBackgroundColor(Color.BLACK);
 
 	}
 
@@ -321,6 +329,8 @@ public class MainMenuActivity extends FragmentActivity implements
 				.replace(R.id.main_fragment, targetFragment, "fragment")
 				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
 				.addToBackStack(null).commit();
+		
+		//getSupportFragmentManager().beginTransaction().remove(R.id.main_fragment).commit();
 
 	}
 
@@ -359,9 +369,9 @@ public class MainMenuActivity extends FragmentActivity implements
 		// String grape = c;
 		//String title = a;
 
-		FacebookLogin s2 = (FacebookLogin) fragmentManager
-				.findFragmentById(R.id.share_main_fragment_fb);
-		s2.infoToAccept(a, b, c, d, e);
+	//	FacebookLogin s2 = (FacebookLogin) fragmentManager
+		//		.findFragmentById(R.id.share_main_fragment_fb);
+		//s2.infoToAccept(a, b, c, d, e);
 
 	}
 	
@@ -561,7 +571,7 @@ public class MainMenuActivity extends FragmentActivity implements
 
 	}
 
-	private void reloadActivity() {
+	public void reloadActivity() {
 		// TODO Auto-generated method stub
 		Intent objIntent = new Intent(getApplicationContext(), MainMenuActivity.class);
 		startActivity(objIntent);

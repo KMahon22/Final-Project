@@ -3,15 +3,16 @@ package com.kent.hottnights.leftactivities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.kent.hottnights.FacebookLogin;
 import com.kent.hottnights.MainMenuActivity;
 import com.kent.hottnights.R;
+import com.kent.hottnights.login.FacebookLogin;
 import com.special.ResideMenu.ResideMenu;
 
 public class ShareMainFragment extends Fragment{
@@ -27,7 +28,7 @@ public class ShareMainFragment extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		//return super.onCreateView(inflater, container, savedInstanceState);
+		
 		
 		try {
 			parentView = inflater.inflate(R.layout.media_fragment, container, false);
@@ -39,8 +40,11 @@ public class ShareMainFragment extends Fragment{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		//	Log.i("TRYCATCHHSHARE", e + "");
+		
 		}
-		return parentView;
+		//return parentView;
+		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 	/*
 	@Override
@@ -90,16 +94,18 @@ public class ShareMainFragment extends Fragment{
 	FrameLayout ignored_view = (FrameLayout) parentView.findViewById(R.id.ignored_view);
 	resideMenu.addIgnoredView(ignored_view);
 	}
-	 @Override
+	 
+	/*@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		
 		   
-		    Fragment fragment = (getFragmentManager().findFragmentById(R.id.share_main_fragment));  
+		    Fragment fragment = (getFragmentManager().findFragmentById(R.layout.media_fragment));  
 		    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
 		    ft.remove(fragment);
 		    ft.commit();
+		  
 		
-	}
+	} */
 }

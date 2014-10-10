@@ -25,7 +25,7 @@ import com.kent.hottnights.objects.Photos;
 
 public class HottDatabaseHandler extends SQLiteOpenHelper {
 
-	private static final int DB_VERSION = 15;
+	private static final int DB_VERSION = 16;
 	private static final String DB_NAME = "hottnights";
 
 	// CLUBTABLE NAME AND FIELDNAMES
@@ -322,13 +322,13 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 				+ " 'Absolut', " + " 'Ciroc'," + " 'Zinfadel'," + " 'Banks',"
 				+ " 'Gordans'," + " 'Smirnoff'," + " 'Jamesons')");
 
-		/*// populating the dress table
+	// populating the dress table
 		db.execSQL("INSERT INTO " + TABLE_DRESS + " Values (1," + " 'no',"
 				+ " 'no'," + " 'no'," + " 'no'," + " 'no')");
 		db.execSQL("INSERT INTO " + TABLE_DRESS + " Values (2," + " 'yes',"
 				+ " 'yes'," + " 'yes'," + " 'yes'," + " 'yes')");
 		db.execSQL("INSERT INTO " + TABLE_DRESS + " Values (3," + " 'maybe',"
-				+ " 'maybe'," + " 'maybe'," + " 'maybe'," + " 'maybe')"); */
+				+ " 'maybe'," + " 'maybe'," + " 'maybe'," + " 'maybe')"); 
 
 		// popuating the gas station table
 		db.execSQL("INSERT INTO " + TABLE_GS + " Values(1," + " 'Shell',"
@@ -660,8 +660,7 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 		return dressList;
 	}
 
-	public void insertDressCode(HashMap<String, String> queryValues)
-	{
+	public void insertDressCode(HashMap<String, String> queryValues) {
 		SQLiteDatabase database = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put("dress_id", Integer.parseInt(queryValues.get("dress_id")));
@@ -673,7 +672,7 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 		database.insert(TABLE_DRESS, null, values);
 		database.close();
 	}
-	
+
 	public ArrayList<GasStations> getGS() {
 		gsList.clear();
 		try {
@@ -768,8 +767,8 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 					ph.setPhoto3(cursor.getString(3));
 					ph.setPhoto4(cursor.getString(4));
 					ph.setPhoto5(cursor.getString(5));
-					//ph.setPhoto6(cursor.getString(6));
-					//ph.setPhoto7(cursor.getString(7));
+					// ph.setPhoto6(cursor.getString(6));
+					// ph.setPhoto7(cursor.getString(7));
 					photoList.add(ph);
 				} while (cursor.moveToNext());
 
@@ -861,21 +860,18 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 		return eventList;
 	}
 
-	public ArrayList<EventContact> getEC(int evenId) 
-	{
+	public ArrayList<EventContact> getEC(int evenId) {
 		ecList.clear();
-		
-		try 
-		{
-			String ecQuery = "SELECT * FROM " + TABLE_EC + " WHERE event_id=" + evenId;
-			
+
+		try {
+			String ecQuery = "SELECT * FROM " + TABLE_EC + " WHERE event_id="
+					+ evenId;
+
 			SQLiteDatabase db = this.getWritableDatabase();
 			Cursor cursor = db.rawQuery(ecQuery, null);
-			
-			if (cursor.moveToFirst())
-			{
-				do 
-				{
+
+			if (cursor.moveToFirst()) {
+				do {
 					EventContact ecc = new EventContact();
 					ecc.setEcId(Integer.parseInt(cursor.getString(0)));
 					ecc.setEcName(cursor.getString(1));
@@ -886,16 +882,15 @@ public class HottDatabaseHandler extends SQLiteOpenHelper {
 					ecc.setEcTwitter(cursor.getString(6));
 					ecc.setEvent_id(Integer.parseInt(cursor.getString(7)));
 					ecList.add(ecc);
-					
+
 				} while (cursor.moveToNext());
-				
+
 				cursor.close();
 				db.close();
 				return ecList;
 			}
-			
-		}catch (Exception e)
-		{
+
+		} catch (Exception e) {
 			Log.i("ECQ", e + "");
 		}
 		return ecList;
